@@ -1,0 +1,281 @@
+# theme = tokyonight
+# theme = light:tokyonight-day,dark:tokyonight_night
+theme = light:dayfox,dark:catppuccin-frappe
+# theme = catppuccin-latte
+
+shell-integration = zsh
+# shell-integration-features = no-cursor
+
+# CaskaydiaMono Nerd Font Mono
+#   CaskaydiaMono NFM Bold
+#   CaskaydiaMono NFM Bold Italic
+#   CaskaydiaMono NFM ExtraLight
+#   CaskaydiaMono NFM ExtraLight Italic
+#   CaskaydiaMono NFM Italic
+#   CaskaydiaMono NFM Light
+#   CaskaydiaMono NFM Light Italic
+#   CaskaydiaMono NFM Regular
+#   CaskaydiaMono NFM SemiBold
+#   CaskaydiaMono NFM SemiBold Italic
+#   CaskaydiaMono NFM SemiLight
+#   CaskaydiaMono NFM SemiLight Italic
+# font-family = "CaskaydiaMono NFM Regular"
+# font-family-bold = "CaskaydiaMono NFM Bold"
+# font-family-italic = "CaskaydiaMono NFM Italic"
+
+font-family = "MonaspiceNe NFM"
+# font-family-bold = "MonaspiceNe NFM Medium"
+# font-family-italic = "MonaspiceNe NFM Medium Italic"
+
+# font-family = "Monaspace Neon Var ExtraLight SemiBold"
+# font-family-bold = "Monaspace Neon Var ExtraLight Bold"
+# font-family-italic = "Monaspace Neon Var ExtraLight SemiBold Italic"
+
+# pending to test Blex Mono, Gohu Nerd Font, Terminess Nerd Font
+# font-family = "Comic Mono"
+# font-family-bold = "Comic Mono Bold"
+# font-family = "JetBrainsMono NFM SemiBold"
+# font-family-bold = "JetBrainsMono NFM Bold"
+# font-family-italic = "JetBrainsMono NFM Medium Italic"
+font-size = 16
+
+cursor-style = block
+cursor-style-blink = true
+adjust-cell-height = 15%
+
+background-opacity = .95
+background-blur-radius = 5
+
+macos-titlebar-style = hidden
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
+
+# keybind = super+t=text:\x00\x63 ctrl-space
+# keybind = super+w=text:\x00x
+keybind = super+t=text:\x00\x63
+keybind = super+w=text:\x00x
+# clear
+# 636c6561720a^@k
+# 006b0a^C
+keybind = super+k=text:\x00k
+
+keybind = super+d=text:\x00v
+keybind = super+shift+d=text:\x00"xxd -psd
+keybind = ctrl+tab=text:\x00l
+
+# Monaspace Argon Var
+#   Monaspace Argon Var ExtraLight Bold
+#   Monaspace Argon Var ExtraLight Bold Italic
+#   Monaspace Argon Var ExtraLight ExtraBold
+#   Monaspace Argon Var ExtraLight ExtraBold Italic
+#   Monaspace Argon Var ExtraLight ExtraLight Italic
+#   Monaspace Argon Var ExtraLight Italic
+#   Monaspace Argon Var ExtraLight Light
+#   Monaspace Argon Var ExtraLight Light Italic
+#   Monaspace Argon Var ExtraLight Medium
+#   Monaspace Argon Var ExtraLight Medium Italic
+#   Monaspace Argon Var ExtraLight Regular
+#   Monaspace Argon Var ExtraLight SemiBold
+#   Monaspace Argon Var ExtraLight SemiBold Italic
+#   Monaspace Argon Var ExtraLight SemiWide Bold
+#   Monaspace Argon Var ExtraLight SemiWide Bold Italic
+#   Monaspace Argon Var ExtraLight SemiWide ExtraBold
+#   Monaspace Argon Var ExtraLight SemiWide ExtraBold Italic
+#   Monaspace Argon Var ExtraLight SemiWide ExtraLight
+#   Monaspace Argon Var ExtraLight SemiWide ExtraLight Italic
+#   Monaspace Argon Var ExtraLight SemiWide Italic
+#   Monaspace Argon Var ExtraLight SemiWide Light
+#   Monaspace Argon Var ExtraLight SemiWide Light Italic
+#   Monaspace Argon Var ExtraLight SemiWide Medium
+#   Monaspace Argon Var ExtraLight SemiWide Medium Italic
+#   Monaspace Argon Var ExtraLight SemiWide Regular
+#   Monaspace Argon Var ExtraLight SemiWide SemiBold
+#   Monaspace Argon Var ExtraLight SemiWide SemiBold Italic
+#   Monaspace Argon Var ExtraLight Wide Bold
+#   Monaspace Argon Var ExtraLight Wide Bold Italic
+#   Monaspace Argon Var ExtraLight Wide ExtraBold
+#   Monaspace Argon Var ExtraLight Wide ExtraBold Italic
+#   Monaspace Argon Var ExtraLight Wide ExtraLight
+#   Monaspace Argon Var ExtraLight Wide ExtraLight Italic
+#   Monaspace Argon Var ExtraLight Wide Italic
+#   Monaspace Argon Var ExtraLight Wide Light
+#   Monaspace Argon Var ExtraLight Wide Light Italic
+#   Monaspace Argon Var ExtraLight Wide Medium
+#   Monaspace Argon Var ExtraLight Wide Medium Italic
+#   Monaspace Argon Var ExtraLight Wide Regular
+#   Monaspace Argon Var ExtraLight Wide SemiBold
+#   Monaspace Argon Var ExtraLight Wide SemiBold Italic
+# Monaspace Krypton Var
+#   Monaspace Krypton Var ExtraLight Bold
+#   Monaspace Krypton Var ExtraLight Bold Italic
+#   Monaspace Krypton Var ExtraLight ExtraBold
+#   Monaspace Krypton Var ExtraLight ExtraBold Italic
+#   Monaspace Krypton Var ExtraLight ExtraLight Italic
+#   Monaspace Krypton Var ExtraLight Italic
+#   Monaspace Krypton Var ExtraLight Light
+#   Monaspace Krypton Var ExtraLight Light Italic
+#   Monaspace Krypton Var ExtraLight Medium
+#   Monaspace Krypton Var ExtraLight Medium Italic
+#   Monaspace Krypton Var ExtraLight Regular
+#   Monaspace Krypton Var ExtraLight SemiBold
+#   Monaspace Krypton Var ExtraLight SemiBold Italic
+#   Monaspace Krypton Var ExtraLight SemiWide Bold
+#   Monaspace Krypton Var ExtraLight SemiWide Bold Italic
+#   Monaspace Krypton Var ExtraLight SemiWide ExtraBold
+#   Monaspace Krypton Var ExtraLight SemiWide ExtraBold Italic
+#   Monaspace Krypton Var ExtraLight SemiWide ExtraLight
+#   Monaspace Krypton Var ExtraLight SemiWide ExtraLight Italic
+#   Monaspace Krypton Var ExtraLight SemiWide Italic
+#   Monaspace Krypton Var ExtraLight SemiWide Light
+#   Monaspace Krypton Var ExtraLight SemiWide Light Italic
+#   Monaspace Krypton Var ExtraLight SemiWide Medium
+#   Monaspace Krypton Var ExtraLight SemiWide Medium Italic
+#   Monaspace Krypton Var ExtraLight SemiWide Regular
+#   Monaspace Krypton Var ExtraLight SemiWide SemiBold
+#   Monaspace Krypton Var ExtraLight SemiWide SemiBold Italic
+#   Monaspace Krypton Var ExtraLight Wide Bold
+#   Monaspace Krypton Var ExtraLight Wide Bold Italic
+#   Monaspace Krypton Var ExtraLight Wide ExtraBold
+#   Monaspace Krypton Var ExtraLight Wide ExtraBold Italic
+#   Monaspace Krypton Var ExtraLight Wide ExtraLight
+#   Monaspace Krypton Var ExtraLight Wide ExtraLight Italic
+#   Monaspace Krypton Var ExtraLight Wide Italic
+#   Monaspace Krypton Var ExtraLight Wide Light
+#   Monaspace Krypton Var ExtraLight Wide Light Italic
+#   Monaspace Krypton Var ExtraLight Wide Medium
+#   Monaspace Krypton Var ExtraLight Wide Medium Italic
+#   Monaspace Krypton Var ExtraLight Wide Regular
+#   Monaspace Krypton Var ExtraLight Wide SemiBold
+#   Monaspace Krypton Var ExtraLight Wide SemiBold Italic
+# Monaspace Neon Var
+#   Monaspace Neon Var ExtraLight Bold
+#   Monaspace Neon Var ExtraLight Bold Italic
+#   Monaspace Neon Var ExtraLight ExtraBold
+#   Monaspace Neon Var ExtraLight ExtraBold Italic
+#   Monaspace Neon Var ExtraLight ExtraLight Italic
+#   Monaspace Neon Var ExtraLight Italic
+#   Monaspace Neon Var ExtraLight Light
+#   Monaspace Neon Var ExtraLight Light Italic
+#   Monaspace Neon Var ExtraLight Medium
+#   Monaspace Neon Var ExtraLight Medium Italic
+#   Monaspace Neon Var ExtraLight Regular
+#   Monaspace Neon Var ExtraLight SemiBold
+#   Monaspace Neon Var ExtraLight SemiBold Italic
+#   Monaspace Neon Var ExtraLight SemiWide Bold
+#   Monaspace Neon Var ExtraLight SemiWide Bold Italic
+#   Monaspace Neon Var ExtraLight SemiWide ExtraBold
+#   Monaspace Neon Var ExtraLight SemiWide ExtraBold Italic
+#   Monaspace Neon Var ExtraLight SemiWide ExtraLight
+#   Monaspace Neon Var ExtraLight SemiWide ExtraLight Italic
+#   Monaspace Neon Var ExtraLight SemiWide Italic
+#   Monaspace Neon Var ExtraLight SemiWide Light
+#   Monaspace Neon Var ExtraLight SemiWide Light Italic
+#   Monaspace Neon Var ExtraLight SemiWide Medium
+#   Monaspace Neon Var ExtraLight SemiWide Medium Italic
+#   Monaspace Neon Var ExtraLight SemiWide Regular
+#   Monaspace Neon Var ExtraLight SemiWide SemiBold
+#   Monaspace Neon Var ExtraLight SemiWide SemiBold Italic
+#   Monaspace Neon Var ExtraLight Wide Bold
+#   Monaspace Neon Var ExtraLight Wide Bold Italic
+#   Monaspace Neon Var ExtraLight Wide ExtraBold
+#   Monaspace Neon Var ExtraLight Wide ExtraBold Italic
+#   Monaspace Neon Var ExtraLight Wide ExtraLight
+#   Monaspace Neon Var ExtraLight Wide ExtraLight Italic
+#   Monaspace Neon Var ExtraLight Wide Italic
+#   Monaspace Neon Var ExtraLight Wide Light
+#   Monaspace Neon Var ExtraLight Wide Light Italic
+#   Monaspace Neon Var ExtraLight Wide Medium
+#   Monaspace Neon Var ExtraLight Wide Medium Italic
+#   Monaspace Neon Var ExtraLight Wide Regular
+#   Monaspace Neon Var ExtraLight Wide SemiBold
+#   Monaspace Neon Var ExtraLight Wide SemiBold Italic
+# Monaspace Radon Var
+#   Monaspace Radon Var ExtraLight Bold
+#   Monaspace Radon Var ExtraLight Bold Italic
+#   Monaspace Radon Var ExtraLight ExtraBold
+#   Monaspace Radon Var ExtraLight ExtraBold Italic
+#   Monaspace Radon Var ExtraLight ExtraLight Italic
+#   Monaspace Radon Var ExtraLight Italic
+#   Monaspace Radon Var ExtraLight Light
+#   Monaspace Radon Var ExtraLight Light Italic
+#   Monaspace Radon Var ExtraLight Medium
+#   Monaspace Radon Var ExtraLight Medium Italic
+#   Monaspace Radon Var ExtraLight Regular
+#   Monaspace Radon Var ExtraLight SemiBold
+#   Monaspace Radon Var ExtraLight SemiBold Italic
+#   Monaspace Radon Var ExtraLight SemiWide Bold
+#   Monaspace Radon Var ExtraLight SemiWide Bold Italic
+#   Monaspace Radon Var ExtraLight SemiWide ExtraBold
+#   Monaspace Radon Var ExtraLight SemiWide ExtraBold Italic
+#   Monaspace Radon Var ExtraLight SemiWide ExtraLight
+#   Monaspace Radon Var ExtraLight SemiWide ExtraLight Italic
+#   Monaspace Radon Var ExtraLight SemiWide Italic
+#   Monaspace Radon Var ExtraLight SemiWide Light
+#   Monaspace Radon Var ExtraLight SemiWide Light Italic
+#   Monaspace Radon Var ExtraLight SemiWide Medium
+#   Monaspace Radon Var ExtraLight SemiWide Medium Italic
+#   Monaspace Radon Var ExtraLight SemiWide Regular
+#   Monaspace Radon Var ExtraLight SemiWide SemiBold
+#   Monaspace Radon Var ExtraLight SemiWide SemiBold Italic
+#   Monaspace Radon Var ExtraLight Wide Bold
+#   Monaspace Radon Var ExtraLight Wide Bold Italic
+#   Monaspace Radon Var ExtraLight Wide ExtraBold
+#   Monaspace Radon Var ExtraLight Wide ExtraBold Italic
+#   Monaspace Radon Var ExtraLight Wide ExtraLight
+#   Monaspace Radon Var ExtraLight Wide ExtraLight Italic
+#   Monaspace Radon Var ExtraLight Wide Italic
+#   Monaspace Radon Var ExtraLight Wide Light
+#   Monaspace Radon Var ExtraLight Wide Light Italic
+#   Monaspace Radon Var ExtraLight Wide Medium
+#   Monaspace Radon Var ExtraLight Wide Medium Italic
+#   Monaspace Radon Var ExtraLight Wide Regular
+#   Monaspace Radon Var ExtraLight Wide SemiBold
+#   Monaspace Radon Var ExtraLight Wide SemiBold Italic
+# Monaspace Xenon Var
+#   Monaspace Xenon Var ExtraLight Bold
+#   Monaspace Xenon Var ExtraLight Bold Italic
+#   Monaspace Xenon Var ExtraLight ExtraBold
+#   Monaspace Xenon Var ExtraLight ExtraBold Italic
+#   Monaspace Xenon Var ExtraLight ExtraLight Italic
+#   Monaspace Xenon Var ExtraLight Italic
+#   Monaspace Xenon Var ExtraLight Light
+#   Monaspace Xenon Var ExtraLight Light Italic
+#   Monaspace Xenon Var ExtraLight Medium
+#   Monaspace Xenon Var ExtraLight Medium Italic
+#   Monaspace Xenon Var ExtraLight Regular
+#   Monaspace Xenon Var ExtraLight SemiBold
+#   Monaspace Xenon Var ExtraLight SemiBold Italic
+#   Monaspace Xenon Var ExtraLight SemiWide Bold
+#   Monaspace Xenon Var ExtraLight SemiWide Bold Italic
+#   Monaspace Xenon Var ExtraLight SemiWide ExtraBold
+#   Monaspace Xenon Var ExtraLight SemiWide ExtraBold Italic
+#   Monaspace Xenon Var ExtraLight SemiWide ExtraLight
+#   Monaspace Xenon Var ExtraLight SemiWide ExtraLight Italic
+#   Monaspace Xenon Var ExtraLight SemiWide Italic
+#   Monaspace Xenon Var ExtraLight SemiWide Light
+#   Monaspace Xenon Var ExtraLight SemiWide Light Italic
+#   Monaspace Xenon Var ExtraLight SemiWide Medium
+#   Monaspace Xenon Var ExtraLight SemiWide Medium Italic
+#   Monaspace Xenon Var ExtraLight SemiWide Regular
+#   Monaspace Xenon Var ExtraLight SemiWide SemiBold
+#   Monaspace Xenon Var ExtraLight SemiWide SemiBold Italic
+#   Monaspace Xenon Var ExtraLight Wide Bold
+#   Monaspace Xenon Var ExtraLight Wide Bold Italic
+#   Monaspace Xenon Var ExtraLight Wide ExtraBold
+#   Monaspace Xenon Var ExtraLight Wide ExtraBold Italic
+#   Monaspace Xenon Var ExtraLight Wide ExtraLight
+#   Monaspace Xenon Var ExtraLight Wide ExtraLight Italic
+#   Monaspace Xenon Var ExtraLight Wide Italic
+#   Monaspace Xenon Var ExtraLight Wide Light
+#   Monaspace Xenon Var ExtraLight Wide Light Italic
+#   Monaspace Xenon Var ExtraLight Wide Medium
+#   Monaspace Xenon Var ExtraLight Wide Medium Italic
+#   Monaspace Xenon Var ExtraLight Wide Regular
+#   Monaspace Xenon Var ExtraLight Wide SemiBold
+#   Monaspace Xenon Var ExtraLight Wide SemiBold Italic
+#
+

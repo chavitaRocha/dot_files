@@ -1,0 +1,5 @@
+{
+    "diagnostics.globals": [
+        "is_zen_mode_enabled"
+    ]
+}

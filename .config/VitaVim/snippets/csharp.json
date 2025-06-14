@@ -1,0 +1,9 @@
+{
+  "console": {
+    "prefix": "log",
+    "body": [
+      "Console.WriteLine(\"${1:message}\");"
+    ],
+    "description": "Console write line with string interpolation"
+  }
+}

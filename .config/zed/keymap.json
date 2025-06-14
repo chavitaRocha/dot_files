@@ -1,0 +1,152 @@
+[
+  {
+    "bindings": {
+      "cmd-t": "workspace::ToggleBottomDock",
+      // "ctrl-y": "menu::SecondaryConfirm"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "tab": "editor::ComposeCompletion"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space a t": "assistant::ToggleFocus",
+      "space b d": "pane::CloseActiveItem",
+      "space q": "workspace::CloseWindow",
+      "space b t": "pane::TogglePinTab",
+      "m m": "pane::TogglePinTab",
+      "space x": "diagnostics::Deploy",
+      "space r r": "task::Rerun",
+      "space t c": "theme_selector::Toggle",
+      "ctrl-w": [
+        "workspace::SendKeystrokes",
+        "shift-z shift-q"
+      ],
+      "space g d": "editor::OpenExcerpts",
+      "space k": "editor::Hover"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "S": [
+        "vim::PushAddSurrounds",
+        {}
+      ]
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "shift-l": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Dock || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "d": "project_panel::Delete",
+      "t": "editor::ScrollCursorCenter",
+      "/": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "ctrl-shift-tab": "menu::SelectPrevious",
+      "ctrl-backspace": "tab_switcher::CloseSelectedItem"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "shift-k": "editor::Hover",
+      ";": "command_palette::Toggle",
+      "space s f": "file_finder::Toggle",
+      "space s g": "workspace::NewSearch",
+      "space l a": "editor::ToggleCodeActions",
+      "space c a": "editor::ToggleCodeActions",
+      "space f": "editor::Format",
+      "space r n": "editor::Rename",
+      "space d m": "workspace::ToggleCenteredLayout",
+      "space v": "editor::GoToDefinitionSplit",
+      "space e e": "project_panel::ToggleFocus",
+      "space e h": "workspace::CloseAllDocks",
+      "space t": "terminal_panel::ToggleFocus",
+      "space s c": "command_palette::Toggle",
+      "space s a": "command_palette::Toggle",
+      "m l": "tab_switcher::Toggle",
+      "g r": "editor::FindAllReferences",
+      "g c c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "!Editor && TabSwitcher",
+    "bindings": {
+      "d": "tab_switcher::CloseSelectedItem",
+      "j": [
+        "workspace::SendKeystrokes",
+        "down"
+      ],
+      "k": [
+        "workspace::SendKeystrokes",
+        "up"
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      "ctrl-s": [
+        "workspace::SendKeystrokes",
+        "cmd-s escape"
+      ]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "j k": "vim::NormalBefore",
+      "ctrl-s": [
+        "workspace::SendKeystrokes",
+        "cmd-s escape"
+      ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  }
+]

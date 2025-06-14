@@ -1,0 +1,100 @@
+{
+  "actions" : [
+    {
+      "key" : "k",
+      "label" : "kill",
+      "type" : "url",
+      "value" : "raycast://extensions/rolandleth/kill-process/index"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "e",
+          "label" : "emoji",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+        },
+        {
+          "key" : "c",
+          "label" : "calendar",
+          "type" : "url",
+          "value" : "raycast://extensions/fuksman/calendar/index"
+        },
+        {
+          "key" : "g",
+          "label" : "gift",
+          "type" : "url",
+          "value" : "raycast://extensions/josephschmitt/gif-search/search"
+        }
+      ],
+      "key" : "s",
+      "label" : "search",
+      "type" : "group"
+    },
+    {
+      "key" : "f",
+      "label" : "float window",
+      "type" : "command",
+      "value" : "/opt/homebrew/bin/aerospace layout floating\n"
+    },
+    {
+      "key" : "c",
+      "label" : "Clipboard",
+      "type" : "url",
+      "value" : "raycast://extensions/raycast/clipboard-history/clipboard-history"
+    },
+    {
+      "key" : "g",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "key" : "t",
+      "type" : "application",
+      "value" : "/Applications/Microsoft Teams.app"
+    },
+    {
+      "key" : "b",
+      "type" : "application",
+      "value" : "/Applications/Brave Browser.app"
+    },
+    {
+      "key" : "a",
+      "type" : "application",
+      "value" : "/Applications/Arc.app"
+    },
+    {
+      "key" : "w",
+      "type" : "application",
+      "value" : "/Applications/WhatsApp.app"
+    },
+    {
+      "key" : "r",
+      "type" : "application",
+      "value" : "/Users/srocha/Applications/Rider.app"
+    },
+    {
+      "key" : "l",
+      "label" : "Lock",
+      "type" : "url",
+      "value" : "raycast://extensions/raycast/system/lock-screen"
+    },
+    {
+      "key" : "z",
+      "type" : "application",
+      "value" : "/Applications/Zen Browser.app"
+    },
+    {
+      "key" : "e",
+      "type" : "application",
+      "value" : "/opt/homebrew/Cellar/emacs-plus@30/30.1/Emacs.app"
+    },
+    {
+      "key" : "v",
+      "label" : "tiling window",
+      "type" : "command",
+      "value" : "/opt/homebrew/bin/aerospace layout tiling"
+    }
+  ],
+  "type" : "group"
+}

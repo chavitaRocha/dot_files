@@ -1,0 +1,347 @@
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffffa500 inactive_color=0xffC8C9D0 width=7.0'
+]
+# after-login-command = []
+# after-startup-command = []
+#
+start-at-login = true
+# testing
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+accordion-padding = 30
+# default-root-container-layout = 'tiles'
+# default-root-container-orientation = 'auto'
+
+gaps.inner.horizontal = 7
+gaps.inner.vertical =   7
+gaps.outer.left =       7
+gaps.outer.bottom =     7
+gaps.outer.top =        7
+gaps.outer.right =      7
+
+# 1 | DELL U2724DE
+
+[workspace-to-monitor-force-assignment]
+'Meet' = ['^built-in retina display$', 'DELL*']
+'View' = ['^built-in retina display$', 'DELL*']
+'Arc' = ['main', 'LG ULTRAGEAR', 'DELL*']
+'Dev' = ['main', 'LG ULTRAGEAR', 'DELL*']
+
+[mode.main.binding]
+cmd-1 = 'workspace Arc'
+cmd-2 = 'workspace Dev'
+cmd-3 = 'workspace Meet'
+# cmd-4 = 'workspace prev'
+# cmd-5 = 'workspace next'
+
+cmd-shift-1 = 'move-node-to-workspace Arc'
+cmd-shift-2 = 'move-node-to-workspace Dev'
+cmd-shift-3 = 'move-node-to-workspace Meet'
+cmd-shift-6 = 'move-node-to-workspace View'
+# cmd-4 = 'workspace prev'
+# cmd-5 = 'workspace next'
+# ctrl-tab = 'workspace-back-and-forth'
+
+ctrl-alt-f = 'fullscreen'
+shift-alt-f = 'layout floating'
+shift-alt-t = 'layout tiling'
+
+alt-h = 'layout tiles horizontal vertical'
+alt-v = 'layout accordion horizontal'
+
+cmd-shift-h = 'move-through left'
+cmd-shift-j = 'move-through down'
+cmd-shift-k = 'move-through up'
+cmd-shift-l = 'move-through right'
+
+cmd-h = 'focus left'
+# cmd-j = 'focus down'
+# cmd-k = 'focus up'
+cmd-l = 'focus right'
+
+alt-ctrl-r = 'mode resize'
+[mode.resize.binding]
+l = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+h = 'resize width +50'
+enter = 'mode main'
+esc = 'mode main'
+
+[[on-window-detected]]
+if.app-id = 'com.steren.home'
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'org.virtualbox.app.VirtualBox'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iphonesimulator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.yanex.marta'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.fortinet.FortiClient'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'FortiTray'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Vial'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Karabiner-Elements'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'OBS'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Font Book'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Digital Color Meter'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Installer'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Disk Utility'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'VLC'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Voice Memos'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'View'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Logi Options+'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'QuickTime Player'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Activity Monitor'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'System Information'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Docker Desktop'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Microsoft Remote Desktop'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.operasoftware.Opera'
+if.window-title-regex-substring = 'Picture in Picture'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Picture in Picture'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+if.window-title-regex-substring = 'Microsoft Meet Notification'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+if.window-title-regex-substring = 'Frosty Mug Daily Stand-Up | Microsoft Teams'
+run = 'layout floating'
+
+# default apps workspace
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = 'move-node-to-workspace Arc'
+
+[[on-window-detected]]
+if.app-id = 'com.operasoftware.Opera'
+run = 'move-node-to-workspace Arc'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace Arc'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace Meet'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace Meet'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace Meet'
+
+[[on-window-detected]]
+if.app-id = 'com.googlecode.iterm2'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'com.neovide.neovide'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run ='move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.com.zen.browser'
+run ='move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed-Preview'
+run ='move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace Dev'
+
+[[on-window-detected]]
+if.app-id = 'org.gnu.Emacs'
+run = ['layout tiling', 'move-node-to-workspace Dev']
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = [ 'layout tiling','move-node-to-workspace Dev']
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+run = [ 'layout tiling','move-node-to-workspace Dev']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.edgemac'
+run = [ 'layout tiling','move-node-to-workspace View']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace View'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+if.window-title-regex-substring = 'Welcome'
+run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+if.window-title-regex-substring = '-'
+run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+if.window-title-regex-substring = 'Settings'
+run = ['layout floating' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+if.window-title-regex-substring = 'Rename'
+run = ['layout floating' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.rider'
+if.window-title-regex-substring = 'Harpoon'
+run = ['layout floating' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.ArcStorm'
+if.window-title-regex-substring = '-'
+run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.ArcStorm'
+if.window-title-regex-substring = 'Settings'
+run = ['layout floating' , 'move-node-to-workspace Dev' ]
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'Settings'
+run = ['layout floating' ]
+
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = ['layout floating' ]
+
+[[on-window-detected]]
+if.app-id = 'com.apple.keychainaccess'
+run = ['layout floating' ]
+
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = [ 'layout tiling','move-node-to-workspace View']
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+if.app-name-regex-substring = 'Picture in Picture'
+if.window-title-regex-substring = 'Picture in Picture'
+run = ['layout floating' ]
+
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefoxdeveloperedition'
+if.app-name-regex-substring = 'Firefox Developer Edition'
+if.window-title-regex-substring = 'Picture-in-Picture'
+check-further-callbacks = true
+run = ['layout floating']
+
+# Array of possible window titles
+# pip_titles=("Picture-in-picture" "Picture-in-Picture" "Picture in Picture" "Picture in picture")

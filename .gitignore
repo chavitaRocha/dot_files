@@ -1,0 +1,6 @@
+.config/tmux/plugins
+.config/nvim/lazy-lock.json
+.config/nvim/lazy-lock.json
+.config/nvim/.env
+.config/zed/prompts/prompts-library-db.0.mdb
+.config/zed/conversations

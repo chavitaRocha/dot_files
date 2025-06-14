@@ -1,0 +1,210 @@
+nnoremap ; :
+set scrolloff=5
+set incsearch
+set number relativenumber
+set clipboard+=unnamed
+set showmode
+set showcmd
+set visualbell
+set noerrorbells
+
+set smartcase
+set incsearch
+set hlsearch
+let mapleader=" "
+"set sneak
+"
+"
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'chrisbra/matchit'
+
+" From OptimusCrime/IdeaVim repository
+" After block yank and paste, move cursor to the end of operated text and don't override register
+vnoremap p "_dP`]
+nnoremap p p`]
+
+nnoremap <Esc> :noh<CR><Esc>
+
+" Y yank whole line by default
+vnoremap y ygv<Esc>$
+nnoremap Y y$
+
+imap jk <Esc>
+imap jj <Esc>
+nmap } }zz
+nmap { {zz
+
+" have x (removes single character) not go into the default registry
+nnoremap x "_x
+" Make X an operator that removes without placing text in the default registry
+nmap X "_d
+nmap XX "_dd
+vmap X "_d
+vmap x "_d
+
+"vmap J (action)MoveLineDown
+" Move selected lines down
+"vmap K (action)MoveLineUp
+vmap J :m '>+1<CR>gv=gv
+" Move selected lines up
+vmap K :m '<-2<CR>gv=gv
+
+" don't yank to default register when changing something
+nnoremap c "xc
+xnoremap c "xc
+
+" Change line, better use S for this.
+nmap cc 1S
+
+" Center screen when jumping to next match
+nnoremap n nzz
+nnoremap N Nzz
+vnoremap n nzz
+vnoremap N Nzz
+
+
+" Center screen when moving up and down
+nnoremap <C-u> <C-u>zz
+nnoremap <C-o> <C-d>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-o> <C-d>zz
+
+"nnoremap dw "_daw
+nnoremap Paw "_dawP
+nnoremap Pi{ "_di{P
+nnoremap Pi} "_di}P
+nnoremap Pi( "_di(P
+nnoremap Pi) "_di)P
+nnoremap Pi' "_di'P
+nnoremap Pi" "_di"P
+nnoremap Pp p
+nmap <leader>p P<CR>
+
+"nmap <Esc> :noh<CR>
+"nmap <Esc> :noh<CR>
+nmap <leader>n :noh<CR>
+nmap <leader>k <Action>(ShowErrorDescription)
+inoremap <C-s> <Esc>:w<CR>
+nmap <C-s> :w<CR>
+"inoremap <C-s> :action SaveDocument<CR><Esc>
+
+
+""nmap <leader>cf <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
+nmap <leader>tb <Action>(ToggleLineBreakpoint)
+"nmap <leader>h :noh<CR>
+nmap <leader>l ^<CR>
+nmap <leader>h $<CR>
+"
+nmap <S-l> <Action>(NextTab)
+nmap <S-h> <Action>(PreviousTab)
+"split
+nmap <leader>% <Action>(SplitVertically)
+nmap <leader>' <Action>(SplitHorizontally)
+"
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+"
+" harpoon
+nmap mm <Action>(AddToHarpoon)
+nmap ml <Action>(ShowHarpoon)
+" Opens edit files menu
+"map <leader>e :action com.ofya.jvroom.actions.EditFilesAction<CR>
+map <leader>a :action com.ofya.jvroom.actions.AddFileAction<CR>
+
+" bookmarks " asdfg hjkl;
+"nmap <leader>mm <Action>(ToggleBookmark)
+"nmap <leader>ml <Action>(ShowBookmarks)
+nmap <leader>bt <Action>(ToggleBookmark)
+nmap <leader>bg <Action>(ShowBookmarks)
+"nmap <leader>em <Action>(ShowBookmarks)
+nmap <leader>gm <Action>(ShowBookmarks)
+nmap <leader>mn <Action>(GotoNextBookmark)
+nmap <leader>mp <Action>(GotoPreviousBookmark)
+
+map <leader>q <action>(CloseContent)
+nmap <leader>bd <action>(CloseContent)
+nmap <leader>dd <action>(CloseContent)
+nmap db <action>(CloseContent)
+nmap <leader>bp <Action>(PinActiveTabToggle)
+nmap <leader>pt <Action>(PinActiveTabToggle)
+nmap <leader>bP <Action>(CloseAllUnpinnedEditors)
+nmap <leader>ut <Action>(CloseAllUnpinnedEditors)
+nmap <leader>ub <Action>(CloseAllUnpinnedEditors)
+nmap <leader>s <Action>(SaveDocument)
+
+
+"map <leader>et :NERDTreeToggle<CR>
+"nmap <leader>ee :NERDTree<CR>
+nnoremap <leader>ee :action SelectInProjectView<CR>
+nmap <leader>eg <Action>(ActivateCommitToolWindow)
+nmap <leader>eh <Action>(HideAllWindows)
+nmap <leader>ed <Action>(ActivateDatabaseToolWindow)
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
+nmap <leader>es <Action>(ActivateServicesToolWindow)
+
+nmap <leader>dm <Action>(ToggleDistractionFreeMode)
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+
+nmap <leader>n :noh<CR>
+
+"map <leader>ff <Action>(GotoFile)
+map <leader>sf <Action>(GotoFile)
+map <leader>sg <Action>(FindInPath)
+"map <leader>sg <Action>(SearchEverywhere)
+"map <leader>fr <Action>(RecentFiles)
+"map <leader>fs <Action>(SwitcherAndRecentFiles)
+"map <leader>fw <Action>(SearchEverywhere)
+map <leader>sw <Action>(SearchEverywhere)
+map <leader>sa <Action>(GotoAction)
+"map <leader>sb <Action>(ViewBreakpoints)
+
+"map <leader>ca <Action>(Refactorings.QuickListPopupAction)
+"map <leader>ca <Action>(EditorToggleActions)
+map <leader>ca <Action>(ShowIntentionActions)
+
+map <leader>rr <Action>(Console.Jdbc.Execute)
+map <leader>rn <Action>(RenameElement)
+"map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+"map <leader>dd <Action>(Debug)
+map <leader>da <Action>(XDebugger.AttachToProcess)
+"map <leader>dr <Action>(Run)
+map <leader>dr <Action>(HTTPClient.RunAll)
+"map <leader>dh <Action>(HTTPClient.RunAll)
+map <leader>ds <Action>(Stop)
+
+"map <leader>xx <Action>(Rider.ProblemsView.CurrentFileShowPreview)
+map <leader>xx <Action>(ActivateProblemsViewToolWindow)
+
+" lsp server "
+nmap gi <Action>(GotoImplementation)
+nmap gm <Action>(ShowBookmarks)
+nmap gu <Action>(ShowUsages)
+"nmap <leader>aa <Action>(ShowIntentionActions)
+nmap <leader>la <Action>(ShowIntentionActions)
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
+nmap <leader>lf <Action>(ReformatCode) | <Action>(ReformatWithPrettierAction)
+nmap <leader>cf <Action>(ReformatCode) | <Action>(ReformatWithPrettierAction)
+nmap <leader>f <Action>(ReformatCode) | <Action>(ReformatWithPrettierAction)
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+"nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+
+" nnoremap sv :action SplitVertically<CR>
+"nnoremap <leader>% :action SplitHorizontally<CR>
+"nnoremap <leader>v :action SplitVertically<CR>
+" nnoremap ss :action SplitHorizontally<CR>
+" nnoremap <c-=> :action Unsplit<CR>
+" nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
