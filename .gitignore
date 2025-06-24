@@ -4,3 +4,5 @@
 .config/nvim/.env
 .config/zed/prompts/prompts-library-db.0.mdb
 .config/zed/conversations
+
+.DS_Store
