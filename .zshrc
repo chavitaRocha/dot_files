@@ -8,6 +8,7 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/zen.toml)"
 
 alias c="clear && tmux clear-history"
 alias clear="clear && tmux clear-history"
+alias pb="pbcopy"
 
 alias n="nvim"
 alias nvim="nvim"
@@ -16,7 +17,7 @@ alias vi='NVIM_APPNAME="VitaVim" nvim'
 
 alias ghost="ghostty"
 
-alias nzsh="nvim ~/.zshrc"
+alias nzsh="vi ~/.zshrc"
 alias nconfig="cd ~/.config/nvim/ && nvim"
 alias vconfig="cd ~/.config/VitaVim/ && n"
 
@@ -41,7 +42,7 @@ alias kinesis="cd ~/code/kinesis/Adv360-Pro-ZMK/ && nvim"
 alias corne="cd ~/code/keyboards/corne_zmk_test/ && nvim"
 
 # atuin
-export ATUIN_HOME="$HOME/.atuin/bin"
+export ATUIN_HOME="$HOME/.atuin/bin/"
 export PATH="$ATUIN_HOME:$PATH"
 
 # volta
@@ -122,6 +123,6 @@ export _ZO_EXCLUDE="*/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. "$HOME/.atuin/bin/env"
+# . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"

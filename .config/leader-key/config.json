@@ -59,16 +59,6 @@
       "value" : "/Applications/Brave Browser.app"
     },
     {
-      "key" : "a",
-      "type" : "application",
-      "value" : "/Applications/Arc.app"
-    },
-    {
-      "key" : "w",
-      "type" : "application",
-      "value" : "/Applications/WhatsApp.app"
-    },
-    {
       "key" : "r",
       "type" : "application",
       "value" : "/Users/srocha/Applications/Rider.app"
@@ -82,7 +72,7 @@
     {
       "key" : "z",
       "type" : "application",
-      "value" : "/Applications/Zen Browser.app"
+      "value" : "/Applications/Zen.app"
     },
     {
       "key" : "e",

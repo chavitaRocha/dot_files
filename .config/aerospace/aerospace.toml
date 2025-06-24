@@ -9,7 +9,10 @@ start-at-login = true
 enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 accordion-padding = 30
-# default-root-container-layout = 'tiles'
+
+default-root-container-layout = 'tiles'
+on-focused-monitor-changed= ['move-mouse monitor-lazy-center']
+on-focus-changed= ['move-mouse monitor-lazy-center']
 # default-root-container-orientation = 'auto'
 
 gaps.inner.horizontal = 7
@@ -22,8 +25,8 @@ gaps.outer.right =      7
 # 1 | DELL U2724DE
 
 [workspace-to-monitor-force-assignment]
-'Meet' = ['^built-in retina display$', 'DELL*']
-'View' = ['^built-in retina display$', 'DELL*']
+'Meet' = ['^Built-in Retina Display$', 'DELL*']
+'View' = ['^Built-in Retina Display$', 'DELL*']
 'Arc' = ['main', 'LG ULTRAGEAR', 'DELL*']
 'Dev' = ['main', 'LG ULTRAGEAR', 'DELL*']
 
@@ -31,8 +34,8 @@ gaps.outer.right =      7
 cmd-1 = 'workspace Arc'
 cmd-2 = 'workspace Dev'
 cmd-3 = 'workspace Meet'
-# cmd-4 = 'workspace prev'
-# cmd-5 = 'workspace next'
+cmd-4 = 'workspace prev'
+cmd-5 = 'workspace next'
 
 cmd-shift-1 = 'move-node-to-workspace Arc'
 cmd-shift-2 = 'move-node-to-workspace Dev'
@@ -178,15 +181,15 @@ run = 'layout floating'
 if.window-title-regex-substring = 'Picture in Picture'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-if.window-title-regex-substring = 'Microsoft Meet Notification'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.teams2'
+# if.window-title-regex-substring = 'Microsoft Meet Notification'
+# run = 'layout floating'
 
-[[on-window-detected]]
-if.app-id = 'com.microsoft.teams2'
-if.window-title-regex-substring = 'Frosty Mug Daily Stand-Up | Microsoft Teams'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.teams2'
+# if.window-title-regex-substring = 'Frosty Mug Daily Stand-Up | Microsoft Teams'
+# run = 'layout floating'
 
 # default apps workspace
 [[on-window-detected]]

@@ -163,7 +163,7 @@ return {
 					supports_live = true,
 					matcher = { fuzzy = true, frecency = true },
 					-- In case you want to override the layout for this keymap
-					layout = "dropdown",
+					-- layout = "dropdown",
 				})
 			end,
 			desc = "Find Files",

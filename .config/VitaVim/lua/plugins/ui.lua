@@ -213,7 +213,28 @@ return {
 	},
 	{
 		"Chaitanyabsprip/fastaction.nvim",
-		opts = {},
+		opts = {
+			priority = {
+				typescriptreact = {
+					{ pattern = "add import", key = "i", order = 1 },
+					{ pattern = "update import", key = "u", order = 2 },
+					{ pattern = "remove unused", key = "r", order = 3 },
+					{ pattern = "delete all", key = "d", order = 4 },
+					{ pattern = "use import type", key = "t", order = 5 },
+					{ pattern = "organize imports", key = "o", order = 6 },
+					{ pattern = "add inline type", key = "t", order = 7 },
+				},
+				typescript = {
+					{ pattern = "add import", key = "i", order = 1 },
+					{ pattern = "update import", key = "u", order = 2 },
+					{ pattern = "remove unused", key = "r", order = 3 },
+					{ pattern = "delete all", key = "d", order = 4 },
+					{ pattern = "use import type", key = "t", order = 5 },
+					{ pattern = "organize imports", key = "o", order = 6 },
+					{ pattern = "add inline type", key = "t", order = 7 },
+				},
+			},
+		},
 	},
 	{
 		"j-hui/fidget.nvim", -- show lsp progress

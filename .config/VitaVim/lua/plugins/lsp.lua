@@ -68,22 +68,23 @@ return {
 				},
 			},
 			lua_ls = {},
-			omnisharp = {
-				settings = {
-					FormattingOptions = {
-						OrganizeImports = true,
-						EnableEditorConfigSupport = true,
-					},
-					MsBuild = {},
-					RenameOptions = {},
-					RoslynExtensionsOptions = {
-						enableDecompilationSupport = true,
-					},
-					Sdk = {
-						IncludePrereleases = true,
-					},
-				},
-			},
+			csharp_ls = {},
+			-- omnisharp = {
+			-- 	settings = {
+			-- 		FormattingOptions = {
+			-- 			OrganizeImports = true,
+			-- 			EnableEditorConfigSupport = true,
+			-- 		},
+			-- 		MsBuild = {},
+			-- 		RenameOptions = {},
+			-- 		RoslynExtensionsOptions = {
+			-- 			enableDecompilationSupport = true,
+			-- 		},
+			-- 		Sdk = {
+			-- 			IncludePrereleases = true,
+			-- 		},
+			-- 	},
+			-- },
 			jsonls = {
 				settings = {
 					json = {
@@ -124,6 +125,7 @@ return {
 					--   ) or vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
 				end,
 			},
+			biome = {},
 		}
 
 		local ensure_installed = vim.tbl_keys(servers or {})
