@@ -84,6 +84,23 @@
       "label" : "tiling window",
       "type" : "command",
       "value" : "/opt/homebrew/bin/aerospace layout tiling"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "c",
+          "label" : "window center",
+          "type" : "url",
+          "value" : "raycast://extensions/raycast/window-management/center-three-fourths"
+        }
+      ],
+      "key" : "w",
+      "type" : "group"
+    },
+    {
+      "key" : "m",
+      "type" : "application",
+      "value" : "/Applications/Spotify.app"
     }
   ],
   "type" : "group"

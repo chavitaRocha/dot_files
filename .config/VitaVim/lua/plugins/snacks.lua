@@ -93,7 +93,7 @@ return {
 			desc = "Buffers",
 		},
 		{
-			"<leader>fc",
+			"<leader>uc",
 			function()
 				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 			end,
@@ -355,7 +355,7 @@ return {
 			desc = "Undo History",
 		},
 		{
-			"<leader>uC",
+			"<leader>tc",
 			function()
 				Snacks.picker.colorschemes()
 			end,

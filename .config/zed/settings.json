@@ -1,173 +1,158 @@
 {
-  "telemetry": {
-    "metrics": false,
-    "diagnostics": false
-  },
-  "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "version": "2"
-  },
-  "edit_predictions": {
-    "disabled_globs": [
-      ".env",
-      "src/main.rs",
-      "iteration/repeat.go",
-      "structures/sum.go",
-      "structures/sum_test.go"
-    ]
-  },
-  "experimental.theme_overrides": {
-    // "background.appearance": "blurred",
-    // "background": "#00000030",
-    // "editor.background": "#00000030",
-  },
-  "restore_on_startup": "last_workspace",
-  "vim_mode": true,
-  "auto_update": false,
-  "theme": "Catppuccin Latte",
-  // "theme": "Atelier Heath Light",
-  // "theme": "Atelier Forest Light",
-  "base_keymap": "VSCode",
-  "ui_font_size": 17,
-  "buffer_font_size": 15.0,
-  "relative_line_numbers": true,
-  "soft_wrap": "editor_width",
-  "tabs": {
-    "file_icons": true
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "vertical_scroll_margin": 35,
-  "project_panel": {
-    "dock": "right"
-  },
-  "terminal": {
-    "dock": "right"
-  },
-  "formatter": {
-    "language_server": {
-      "name": "biome"
-    }
-  },
-  "code_actions_on_format": {
-    "source.fixAll.biome": true,
-    "source.organizeImports.biome": true
-  },
-  "languages": {
-    "TypeScript": {
-      "linked_edits": true,
-      "language_servers": [
-        "vtsls",
-        "biome",
-        "typos",
-        "tailwindcss",
-        "eslint"
-      ]
-    },
-    "TSX": {
-      "linked_edits": true,
-      "language_servers": [
-        "vtsls",
-        "biome",
-        "typos",
-        "tailwindcss",
-        "eslint"
-      ]
-    },
-    "JavaScript": {
-      "linked_edits": true,
-      "language_servers": [
-        "vtsls",
-        "biome",
-        "typos",
-        "tailwindcss"
-      ]
-    }
-  },
-  "lsp": {
-    "typos": {
-      "initialization_options": {
-        "config": ".typos.toml",
-        "path": "typos-lsp",
-        "diagnosticSeverity": "Error", // "Error", "Hint", "Information", "Warning"
-        "logLevel": "info", // "debug", "error", "info", "off", "trace", "warn"
-        "trace.server": "messages" // "off", "messages", "verbose"
-      }
-    },
-    "biome": {
-      "settings": {
-        // "config_path": "~/code/editor/biome.json",
-        // "require_config_file": true
-      }
-    },
-    "vtsls": {
-      "settings": {
-        "javascript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
-            },
-            "parameterTypes": {
-              "enabled": true
-            },
-            "variableTypes": {
-              "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            },
-            "propertyDeclarationTypes": {
-              "enabled": true
-            },
-            "functionLikeReturnTypes": {
-              "enabled": true
-            },
-            "enumMemberValues": {
-              "enabled": true
-            }
-          }
-        },
-        "typescript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
-            },
-            "parameterTypes": {
-              "enabled": true
-            },
-            "variableTypes": {
-              "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            },
-            "propertyDeclarationTypes": {
-              "enabled": true
-            },
-            "functionLikeReturnTypes": {
-              "enabled": true
-            },
-            "enumMemberValues": {
-              "enabled": true
-            }
-          }
-        }
-      }
-    },
-    "gopls": {
-      "initialization_options": {
-        "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
-          "constantValues": true,
-          "functionTypeParameters": true,
-          "parameterNames": true,
-          "rangeVariableTypes": true
-        }
-      }
-    }
-  }
+	"dev": {
+		"lsp_document_colors": "inlay"
+	},
+	"telemetry": {
+		"metrics": false,
+		"diagnostics": false
+	},
+	"agent": {
+		"default_model": {
+			"provider": "zed.dev",
+			"model": "claude-3-7-sonnet-latest"
+		},
+		"version": "2"
+	},
+	"edit_predictions": {
+		"disabled_globs": [
+			".env",
+			"src/main.rs",
+			"iteration/repeat.go",
+			"structures/sum.go",
+			"structures/sum_test.go"
+		]
+	},
+	"experimental.theme_overrides": {
+		// "background.appearance": "blurred",
+		// "background": "#00000030",
+		// "editor.background": "#00000030",
+	},
+	"restore_on_startup": "last_workspace",
+	"vim_mode": true,
+	"auto_update": false,
+	"theme": "Catppuccin Latte",
+	// "theme": "Atelier Heath Light",
+	// "theme": "Atelier Forest Light",
+	"base_keymap": "VSCode",
+	"ui_font_size": 17,
+	"buffer_font_size": 15.0,
+	"relative_line_numbers": true,
+	"soft_wrap": "editor_width",
+	"tabs": {
+		"file_icons": true
+	},
+	"features": {
+		"edit_prediction_provider": "zed"
+	},
+	"vertical_scroll_margin": 35,
+	"project_panel": {
+		"dock": "right"
+	},
+	"terminal": {
+		"dock": "right"
+	},
+	"formatter": {
+		"language_server": {
+			"name": "biome"
+		}
+	},
+	"code_actions_on_format": {
+		"source.fixAll.biome": true,
+		"source.organizeImports.biome": true
+	},
+	"languages": {
+		"TypeScript": {
+			"linked_edits": true,
+			"language_servers": ["vtsls", "biome", "typos", "tailwindcss", "eslint"]
+		},
+		"TSX": {
+			"linked_edits": true,
+			"language_servers": ["vtsls", "biome", "typos", "tailwindcss", "eslint"]
+		},
+		"JavaScript": {
+			"linked_edits": true,
+			"language_servers": ["vtsls", "biome", "typos", "tailwindcss"]
+		}
+	},
+	"lsp": {
+		"typos": {
+			"initialization_options": {
+				"config": ".typos.toml",
+				"path": "typos-lsp",
+				"diagnosticSeverity": "Error", // "Error", "Hint", "Information", "Warning"
+				"logLevel": "info", // "debug", "error", "info", "off", "trace", "warn"
+				"trace.server": "messages" // "off", "messages", "verbose"
+			}
+		},
+		"biome": {
+			"settings": {
+				"configuration_path": "./biome.json"
+			}
+		},
+		"vtsls": {
+			"settings": {
+				"javascript": {
+					"inlayHints": {
+						"parameterNames": {
+							"enabled": "all",
+							"suppressWhenArgumentMatchesName": false
+						},
+						"parameterTypes": {
+							"enabled": true
+						},
+						"variableTypes": {
+							"enabled": true,
+							"suppressWhenTypeMatchesName": true
+						},
+						"propertyDeclarationTypes": {
+							"enabled": true
+						},
+						"functionLikeReturnTypes": {
+							"enabled": true
+						},
+						"enumMemberValues": {
+							"enabled": true
+						}
+					}
+				},
+				"typescript": {
+					"inlayHints": {
+						"parameterNames": {
+							"enabled": "all",
+							"suppressWhenArgumentMatchesName": false
+						},
+						"parameterTypes": {
+							"enabled": true
+						},
+						"variableTypes": {
+							"enabled": true,
+							"suppressWhenTypeMatchesName": true
+						},
+						"propertyDeclarationTypes": {
+							"enabled": true
+						},
+						"functionLikeReturnTypes": {
+							"enabled": true
+						},
+						"enumMemberValues": {
+							"enabled": true
+						}
+					}
+				}
+			}
+		},
+		"gopls": {
+			"initialization_options": {
+				"hints": {
+					"assignVariableTypes": true,
+					"compositeLiteralFields": true,
+					"compositeLiteralTypes": true,
+					"constantValues": true,
+					"functionTypeParameters": true,
+					"parameterNames": true,
+					"rangeVariableTypes": true
+				}
+			}
+		}
+	}
 }

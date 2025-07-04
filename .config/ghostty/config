@@ -1,6 +1,6 @@
 # theme = tokyonight
 # theme = light:tokyonight-day,dark:tokyonight_night
-theme = light:dayfox,dark:catppuccin-frappe
+theme = light:dayfox_vita,dark:catppuccin-frappe
 # theme = catppuccin-latte
 
 shell-integration = zsh
@@ -54,6 +54,8 @@ window-padding-balance = true
 window-padding-x = 0
 window-padding-y = 0
 
+custom-shader = shaders/cursor_smear.glsl
+
 # keybind = super+t=text:\x00\x63 ctrl-space
 # keybind = super+w=text:\x00x
 keybind = super+t=text:\x00\x63
@@ -64,7 +66,7 @@ keybind = super+w=text:\x00x
 keybind = super+k=text:\x00k
 
 keybind = super+d=text:\x00v
-keybind = super+shift+d=text:\x00"xxd -psd
+keybind = super+shift+d=text:\x00"
 keybind = ctrl+tab=text:\x00l
 
 # Monaspace Argon Var

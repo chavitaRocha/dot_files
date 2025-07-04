@@ -16,6 +16,8 @@ alias ni="nvim"
 alias vi='NVIM_APPNAME="VitaVim" nvim'
 
 alias ghost="ghostty"
+alias nghost="cd ~/.config/ghostty && vi"
+alias nghos="cd ~/.config/ghostty && vi"
 
 alias nzsh="vi ~/.zshrc"
 alias nconfig="cd ~/.config/nvim/ && nvim"
@@ -37,7 +39,10 @@ alias hci="cd ~/code/smart/hci"
 alias hci_sql="cd ~/code/sql/hci/ && nvim"
 alias hciSql="cd ~/code/sql/hci/ && nvim"
 alias notes="cd ~/code/notes && vi"
+
 alias f="~/code/notes/tmux-sessionizer"
+alias sf='sesh connect $(sesh list | fzf)'
+
 alias kinesis="cd ~/code/kinesis/Adv360-Pro-ZMK/ && nvim"
 alias corne="cd ~/code/keyboards/corne_zmk_test/ && nvim"
 
@@ -125,4 +130,21 @@ export _ZO_EXCLUDE="*/bin"
 
 # . "$HOME/.atuin/bin/env"
 
+
+
 eval "$(atuin init zsh)"
+
+# Add this to your ~/.zshrc
+# if [ -n "$TMUX" ]; then
+#   # Function to update tmux session name
+#   update_tmux_session_name() {
+#     tmux rename-session "$(basename "$PWD")"
+#   }
+#   # Add the function to the precmd hook
+#   # precmd_functions+=(update_tmux_session_name)
+# fi
+
+# sesh_connect_basename_wrapper: Connects to a sesh/tmux session,
+#                                or creates a new one named after the
+#                                basename of the selected path.
+

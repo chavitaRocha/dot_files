@@ -1,0 +1,3 @@
+[default_session]
+startup_command = "f && c"
+# preview_command = "eza --all --git --icons --color=always {}"
