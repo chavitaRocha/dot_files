@@ -97,7 +97,7 @@ return {
 			},
 
 			spec = {
-				{ "<leader>c", group = "[C]ode", mode = { "n", "x" } },
+				{ "<leader>c", group = "[C]ode",     mode = { "n", "x" } },
 				{ "<leader>d", group = "[D]ocument" },
 				{ "<leader>r", group = "[R]ename" },
 				{ "<leader>s", group = "[S]earch" },
@@ -163,7 +163,12 @@ return {
 		opts = {
 			scope = "cwd",
 			style = "basename",
-			icons = false,
+			icons = true,
+			status = true,
+			win_opts = {
+				title = "Grapple",
+				footer = ""
+			}
 		},
 		evet = { "BufReadPost", "BufNewFile" },
 		cmd = "Grapple",
@@ -179,9 +184,9 @@ return {
 				end,
 				desc = "Grapple toggle tag",
 			},
-			{ "md", "<cmd>Grapple untag<cr>", desc = "Grapple toggle tag" },
-			{ "ml", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple toggle tags" },
-			{ "<S-l>", "<cmd>Grapple cycle forward<cr>", desc = "Grapple cycle forward" },
+			{ "md",    "<cmd>Grapple untag<cr>",          desc = "Grapple toggle tag" },
+			{ "ml",    "<cmd>Grapple toggle_tags<cr>",    desc = "Grapple toggle tags" },
+			{ "<S-l>", "<cmd>Grapple cycle forward<cr>",  desc = "Grapple cycle forward" },
 			{ "<S-h>", "<cmd>Grapple cycle backward<cr>", desc = "Grapple cycle backward" },
 		},
 	},
@@ -196,8 +201,8 @@ return {
 			require("nvim-ts-autotag").setup({
 				opts = {
 					-- Defaults
-					enable_close = true, -- Auto close tags
-					enable_rename = true, -- Auto rename pairs of tags
+					enable_close = true,      -- Auto close tags
+					enable_rename = true,     -- Auto rename pairs of tags
 					enable_close_on_slash = false, -- Auto close on trailing </
 				},
 				-- Also override individual filetype configs, these take priority.
@@ -216,22 +221,24 @@ return {
 		opts = {
 			priority = {
 				typescriptreact = {
-					{ pattern = "add import", key = "i", order = 1 },
-					{ pattern = "update import", key = "u", order = 2 },
-					{ pattern = "remove unused", key = "r", order = 3 },
-					{ pattern = "delete all", key = "d", order = 4 },
-					{ pattern = "use import type", key = "t", order = 5 },
-					{ pattern = "organize imports", key = "o", order = 6 },
-					{ pattern = "add inline type", key = "t", order = 7 },
+					{ pattern = "add import",                key = "i", order = 1 },
+					{ pattern = "update import",             key = "u", order = 2 },
+					{ pattern = "remove the unused imports", key = "r", order = 3 },
+					{ pattern = "remove unused",             key = "r", order = 4 },
+					{ pattern = "delete all",                key = "d", order = 5 },
+					{ pattern = "use import type",           key = "t", order = 6 },
+					{ pattern = "organize imports",          key = "o", order = 7 },
+					{ pattern = "add inline type",           key = "t", order = 8 },
 				},
 				typescript = {
-					{ pattern = "add import", key = "i", order = 1 },
-					{ pattern = "update import", key = "u", order = 2 },
-					{ pattern = "remove unused", key = "r", order = 3 },
-					{ pattern = "delete all", key = "d", order = 4 },
-					{ pattern = "use import type", key = "t", order = 5 },
-					{ pattern = "organize imports", key = "o", order = 6 },
-					{ pattern = "add inline type", key = "t", order = 7 },
+					{ pattern = "add import",                key = "i", order = 1 },
+					{ pattern = "update import",             key = "u", order = 2 },
+					{ pattern = "remove the unused imports", key = "r", order = 3 },
+					{ pattern = "remove unused",             key = "r", order = 4 },
+					{ pattern = "delete all",                key = "d", order = 5 },
+					{ pattern = "use import type",           key = "t", order = 6 },
+					{ pattern = "organize imports",          key = "o", order = 7 },
+					{ pattern = "add inline type",           key = "t", order = 8 },
 				},
 			},
 		},

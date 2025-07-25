@@ -23,7 +23,8 @@ shell-integration = zsh
 # font-family-bold = "CaskaydiaMono NFM Bold"
 # font-family-italic = "CaskaydiaMono NFM Italic"
 
-font-family = "MonaspiceNe NFM"
+font-family = "ZedMono NFM Extd"
+# font-family = "MonaspiceNe NFM"
 # font-family-bold = "MonaspiceNe NFM Medium"
 # font-family-italic = "MonaspiceNe NFM Medium Italic"
 
@@ -34,7 +35,7 @@ font-family = "MonaspiceNe NFM"
 # pending to test Blex Mono, Gohu Nerd Font, Terminess Nerd Font
 # font-family = "Comic Mono"
 # font-family-bold = "Comic Mono Bold"
-# font-family = "JetBrainsMono NFM SemiBold"
+# font-family = "JetBrainsMono NFM"
 # font-family-bold = "JetBrainsMono NFM Bold"
 # font-family-italic = "JetBrainsMono NFM Medium Italic"
 font-size = 16
@@ -281,3 +282,37 @@ keybind = ctrl+tab=text:\x00l
 #   Monaspace Xenon Var ExtraLight Wide SemiBold Italic
 #
 
+keybind = shift+enter=text:\n
+
+# ZedMono Nerd Font Mono
+#   ZedMono NFM
+#   ZedMono NFM Bold
+#   ZedMono NFM Bold Italic
+#   ZedMono NFM Bold Oblique
+#   ZedMono NFM Extd
+#   ZedMono NFM Extd Bold
+#   ZedMono NFM Extd Bold Italic
+#   ZedMono NFM Extd Bold Obl
+#   ZedMono NFM Extd ExtBd
+#   ZedMono NFM Extd ExtBd Italic
+#   ZedMono NFM Extd ExtBd Obl
+#   ZedMono NFM Extd Italic
+#   ZedMono NFM Extd Light
+#   ZedMono NFM Extd Light Italic
+#   ZedMono NFM Extd Light Obl
+#   ZedMono NFM Extd Med
+#   ZedMono NFM Extd Med Italic
+#   ZedMono NFM Extd Med Obl
+#   ZedMono NFM Extd Obl
+#   ZedMono NFM ExtraBold
+#   ZedMono NFM ExtraBold Italic
+#   ZedMono NFM ExtraBold Oblique
+#   ZedMono NFM Italic
+#   ZedMono NFM Light
+#   ZedMono NFM Light Italic
+#   ZedMono NFM Light Oblique
+#   ZedMono NFM Medium
+#   ZedMono NFM Medium Italic
+#   ZedMono NFM Medium Oblique
+#   ZedMono NFM Oblique
+#

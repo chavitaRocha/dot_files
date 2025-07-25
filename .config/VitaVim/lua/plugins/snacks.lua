@@ -200,6 +200,11 @@ return {
 					layout = "ivy",
 					exclude = {
 						"node_modules",
+						"package-lock.json",
+						"yarn.lock",
+						"pnpm-lock.yaml",
+						"bun.lockb",
+						"Podfile.lock",
 					},
 				})
 			end,

@@ -111,19 +111,11 @@ return {
 						vim.fs.find(".git", { path = startpath, upward = true })[1]
 					)
 					return workspace
-					--   return util.root_pattern(
-					--     'tailwind.config.js',
-					--     'tailwind.config.cjs',
-					--     'tailwind.config.mjs',
-					--     'tailwind.config.ts',
-					--     'postcss.config.js',
-					--     'postcss.config.cjs',
-					--     'postcss.config.mjs',
-					--     'postcss.config.ts'
-					--   )(fname) or vim.fs.dirname(vim.fs.find('package.json', { path = fname, upward = true })[1]) or vim.fs.dirname(
-					--     vim.fs.find('node_modules', { path = fname, upward = true })[1]
-					--   ) or vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
 				end,
+				classFunctions = {
+					"cva",
+					"cx",
+				},
 			},
 			biome = {},
 		}

@@ -1,6 +1,9 @@
 after-startup-command = [
-  'exec-and-forget borders active_color=0xffffa500 inactive_color=0xffC8C9D0 width=7.0'
+	'exec-and-forget borders'
 ]
+# after-startup-command = [
+#   'exec-and-forget borders active_color=0xffffa500 inactive_color=0xffC8C9D0 width=7.0'
+# ]
 # after-login-command = []
 # after-startup-command = []
 #
