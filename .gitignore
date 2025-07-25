@@ -8,3 +8,5 @@
 .DS_Store
 .config/github-copilot
 .config/raycast/extensions
+.config/atuin/atuin-receipt.json
+.config/gh

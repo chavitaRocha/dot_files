@@ -156,6 +156,6 @@ eval "$(atuin init zsh)"
 #                                basename of the selected path.
 
 
-alias claude="/Users/srocha/.claude/local/claude"
+alias claude="~/.claude/local/claude"
 
 export EDITOR='nvim'
