@@ -14,14 +14,15 @@ alias n="nvim"
 alias nvim="nvim"
 alias ni="nvim"
 alias vi='NVIM_APPNAME="VitaVim" nvim'
+alias vim='NVIM_APPNAME="VitaVim" nvim'
 
 alias ghost="ghostty"
 alias nghost="cd ~/.config/ghostty && vi"
 alias nghos="cd ~/.config/ghostty && vi"
 
 alias nzsh="vi ~/.zshrc"
-alias nconfig="cd ~/.config/nvim/ && nvim"
-alias vconfig="cd ~/.config/VitaVim/ && n"
+alias nconfig="cd ~/.config/nvim/ && n"
+alias vconfig="cd ~/.config/VitaVim/ && vi"
 
 alias ga="git add"
 alias gf="git fetch"
@@ -32,6 +33,12 @@ alias gss="git status -s"
 alias ls="eza --icons --group-directories-first"
 alias ll="eza -l --icons --group-directories-first"
 alias la="eza -al --icons --group-directories-first"
+# A function to run eza with a dynamic tree level
+lta() {
+  # Runs eza with a specified level, or defaults to 4 if no level is given.
+  eza --long --tree --icons --level=${1:-4}
+}
+# alias lat="eza --long --tree --icons --level=4"
 
 alias build="bun run build"
 
@@ -148,3 +155,7 @@ eval "$(atuin init zsh)"
 #                                or creates a new one named after the
 #                                basename of the selected path.
 
+
+alias claude="/Users/srocha/.claude/local/claude"
+
+export EDITOR='nvim'
