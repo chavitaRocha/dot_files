@@ -1,5 +1,5 @@
 local is_transparent = true
-local light_theme = "dawnfox"
+local light_theme = "edge"
 local dark_theme = "catppuccin-frappe"
 local bg_terminal = "#F5F0E7"
 -- local bg_terminal = "#F5F0E7"
@@ -107,6 +107,8 @@ return {
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				pattern = "*",
 				callback = function()
+					vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+					vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 					if vim.api.nvim_get_option_value("background", {}) == "dark" then
 						-- vim.api.nvim_set_hl(0, "Visual", { bg = "#3E4451" }) -- Replace #3E4451 with your desired color
 					else
@@ -175,5 +177,9 @@ return {
 		--     vim.g.zenbones_darken_comments = 45
 		--     vim.cmd.colorscheme('zenbones')
 		-- end
+	},
+	{
+		'sainnhe/edge',
+		priority = 1000,
 	}
 }

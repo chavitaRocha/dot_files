@@ -4,7 +4,6 @@ return {
 		event = "VeryLazy",
 		lazy = false,
 		version = false,
-		enabled = false,
 		opts = {
 			provider = "copilot",
 			providers = {
@@ -40,9 +39,13 @@ return {
 			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			--- The below dependencies are optional,
-			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua",   -- for providers='copilot'
+			"nvim-tree/nvim-web-devicons",
+			{
+				"zbirenbaum/copilot.lua",
+				config = function()
+					require("copilot").setup({})
+				end
+			},
 			{
 				-- support for image pasting
 				"HakonHarnes/img-clip.nvim",
