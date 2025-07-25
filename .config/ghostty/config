@@ -23,7 +23,8 @@ shell-integration = zsh
 # font-family-bold = "CaskaydiaMono NFM Bold"
 # font-family-italic = "CaskaydiaMono NFM Italic"
 
-font-family = "ZedMono NFM Extd"
+font-family = "Monaspace Neon Var ExtraLight Regular"
+# font-family = "ZedMono NFM Extd"
 # font-family = "MonaspiceNe NFM"
 # font-family-bold = "MonaspiceNe NFM Medium"
 # font-family-italic = "MonaspiceNe NFM Medium Italic"
