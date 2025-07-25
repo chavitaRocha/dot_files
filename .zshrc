@@ -6,8 +6,8 @@ eval "$(zoxide init zsh)"
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/zen.toml)"
 
-alias c="clear && tmux clear-history"
-alias clear="clear && tmux clear-history"
+alias c="clear && tmux clear-history 2> /dev/null"
+alias clear="clear && tmux clear-history 2> /dev/null"
 alias pb="pbcopy"
 
 alias n="nvim"

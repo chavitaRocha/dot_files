@@ -6,3 +6,5 @@
 .config/zed/conversations
 
 .DS_Store
+.config/github-copilot
+.config/raycast/extensions
