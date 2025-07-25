@@ -47,7 +47,7 @@ alias hci_sql="cd ~/code/sql/hci/ && nvim"
 alias hciSql="cd ~/code/sql/hci/ && nvim"
 alias notes="cd ~/code/notes && vi"
 
-alias f="~/code/notes/tmux-sessionizer"
+alias f="~/scripts/tmux-sessionizer"
 alias sf='sesh connect $(sesh list | fzf)'
 
 alias kinesis="cd ~/code/kinesis/Adv360-Pro-ZMK/ && nvim"
