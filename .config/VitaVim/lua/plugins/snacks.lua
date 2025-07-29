@@ -109,6 +109,14 @@ return {
 					matcher = {
 						frecency = true,
 					},
+					exclude = {
+						"node_modules",
+						"package-lock.json",
+						"yarn.lock",
+						"pnpm-lock.yaml",
+						"bun.lockb",
+						"Podfile.lock",
+					},
 				})
 			end,
 			desc = "Find Files",

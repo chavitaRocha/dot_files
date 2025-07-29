@@ -37,7 +37,7 @@ return {
 				mark_set = "m",
 				reset = "<BS>",
 				reveal_cwd = ".",
-				show_help = "g?",
+				show_help = "?",
 				synchronize = "=",
 				trim_left = "<",
 				trim_right = ">",
@@ -92,11 +92,11 @@ return {
 					local grapple_section = grapple ~= "" and "󰓹 " .. grapple or ""
 
 					return MiniStatusline.combine_groups({
-						{ hl = mode_hl, strings = { mode } },
+						{ hl = mode_hl,                  strings = { mode } },
 						-- { hl = "MiniStatuslineDevinfo", strings = { git } },
 						{ hl = "MiniStatuslineFilename", strings = { git } },
 						"%<", -- Mark general truncate point
-						{ hl = "MiniStatusLineGrapple", strings = { grapple_section } },
+						{ hl = "MiniStatusLineGrapple",  strings = { grapple_section } },
 						{ hl = "MiniStatuslineFilename", strings = { filename } },
 						"%=", -- End left alignment
 						-- { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
