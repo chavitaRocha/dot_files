@@ -1,0 +1,9 @@
+{
+  "console": {
+    "prefix": "cs",
+    "body": [
+      "Console.WriteLine(\"${1:message}\");"
+    ],
+    "description": "Console write line with string interpolation"
+  }
+}
