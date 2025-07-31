@@ -1,9 +1,0 @@
-{
-  "require": {
-    "prefix": "test",
-    "body": [
-      "this_a_madafaca_test(${1:module})"
-    ],
-    "description": "Require module test"
-  }
-}
