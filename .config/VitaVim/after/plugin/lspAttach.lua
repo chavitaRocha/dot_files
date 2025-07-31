@@ -19,6 +19,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.cmd("wincmd l") -- Move to the new split
 		end, { noremap = true, silent = true, desc = "Go to definition in vertical split" })
 
+		if client.name == "biome" then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
+				buffer = bufnr,
+				callback = function()
+					-- Request 'source.fixAll.biome' code action before saving
+					-- This typically includes format, lint fixes, and organizeImports
+					vim.lsp.buf.code_action({
+						context = {
+							only = { "source.fixAll.biome" },
+							diagnostics = {}, -- Pass diagnostics if needed for context
+						},
+						apply = true, -- Automatically apply the action
+					})
+				end,
+			})
+		end
+
+
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if client == nil then
 			return

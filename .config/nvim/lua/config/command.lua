@@ -128,17 +128,17 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(event)
 		local buf = event.buf
 		local win = vim.api.nvim_get_current_win()
-		
+
 		-- Check if this is a floating window
 		local config = vim.api.nvim_win_get_config(win)
 		if config.relative ~= "" then
 			local buf_name = vim.api.nvim_buf_get_name(buf)
 			local buf_lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-			
+
 			-- Check if it's fastaction by buffer name, filetype, or content
-			if buf_name:match("fastaction") or 
-			   vim.bo[buf].filetype == "fastaction" or
-			   (buf_lines[1] and buf_lines[1]:match("Code actions:")) then
+			if buf_name:match("fastaction") or
+					vim.bo[buf].filetype == "fastaction" or
+					(buf_lines[1] and buf_lines[1]:match("Code actions:")) then
 				vim.keymap.set("n", "<Esc>", "<cmd>close<CR>", {
 					buffer = buf,
 					desc = "Close fastaction window",

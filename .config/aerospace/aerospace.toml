@@ -1,6 +1,11 @@
 after-startup-command = [
 	'exec-and-forget borders'
 ]
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE'
+]
 # after-startup-command = [
 #   'exec-and-forget borders active_color=0xffffa500 inactive_color=0xffC8C9D0 width=7.0'
 # ]
@@ -351,3 +356,8 @@ run = ['layout floating']
 
 # Array of possible window titles
 # pip_titles=("Picture-in-picture" "Picture-in-Picture" "Picture in Picture" "Picture in picture")
+
+[exec]
+    inherit-env-vars = true
+[exec.env-vars]
+    PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'

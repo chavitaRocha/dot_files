@@ -24,6 +24,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			return
 		end
 
+		if client.name == "biome" then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = vim.api.nvim_create_augroup("BiomeFixAll", { clear = true }),
+				buffer = bufnr,
+				callback = function()
+					-- Request 'source.fixAll.biome' code action before saving
+					-- This typically includes format, lint fixes, and organizeImports
+					vim.lsp.buf.code_action({
+						context = {
+							only = { "source.fixAll.biome" },
+							diagnostics = {}, -- Pass diagnostics if needed for context
+						},
+						apply = true, -- Automatically apply the action
+					})
+				end,
+			})
+		end
+
 		if client.name == "omnisharp" then
 			local status, omnisharp_extended = pcall(require, "omnisharp_extended")
 			if not status then

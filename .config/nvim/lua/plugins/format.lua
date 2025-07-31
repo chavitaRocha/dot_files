@@ -24,7 +24,6 @@ return {
 			typescriptreact = { "biome", "prettier", stop_after_first = true },
 			lua = { "stylua" },
 			json = { "jq", "biome", "prettier", stop_after_first = true },
-			-- cs = { "csharpier", stop_after_first = true },
 		},
 		formatters = {
 			csharpier = {

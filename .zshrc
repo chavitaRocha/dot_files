@@ -13,8 +13,9 @@ alias pb="pbcopy"
 alias n="nvim"
 alias nvim="nvim"
 alias ni="nvim"
-alias vi='NVIM_APPNAME="VitaVim" nvim'
-alias vim='NVIM_APPNAME="VitaVim" nvim'
+alias vi="nvim"
+# alias vi='NVIM_APPNAME="VitaVim" nvim'
+# alias vim='NVIM_APPNAME="VitaVim" nvim'
 
 alias ghost="ghostty"
 alias nghost="cd ~/.config/ghostty && vi"

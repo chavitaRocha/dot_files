@@ -31,6 +31,8 @@ return {
 				command = "csharpier",
 				args = { "format", "$FILENAME", "--log-level", "none", "--write-stdout", "--no-cache" },
 			},
+			biome = {
+			}
 		},
 	},
 }

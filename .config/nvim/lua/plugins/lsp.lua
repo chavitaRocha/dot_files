@@ -26,6 +26,8 @@ return {
 			textDocument = { completion = { completionItem = { snippetSupport = false } } },
 		})
 
+
+
 		local servers = {
 			vtsls = {
 				settings = {
