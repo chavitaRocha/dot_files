@@ -13,17 +13,19 @@ alias pb="pbcopy"
 alias n="nvim"
 alias nvim="nvim"
 alias ni="nvim"
+alias v="nvim"
 alias vi="nvim"
+# alias vi="nvim"
 # alias vi='NVIM_APPNAME="VitaVim" nvim'
 # alias vim='NVIM_APPNAME="VitaVim" nvim'
 
 alias ghost="ghostty"
-alias nghost="cd ~/.config/ghostty && vi"
-alias nghos="cd ~/.config/ghostty && vi"
+alias nghost="cd ~/.config/ghostty && n"
+alias nghos="cd ~/.config/ghostty && n"
 
-alias nzsh="vi ~/.zshrc"
+alias nzsh="n ~/.zshrc"
 alias nconfig="cd ~/.config/nvim/ && n"
-alias vconfig="cd ~/.config/VitaVim/ && vi"
+# alias vconfig="cd ~/.config/VitaVim/ && vi"
 
 alias ga="git add"
 alias gf="git fetch"
