@@ -2,6 +2,9 @@ return {
 	"coder/claudecode.nvim",
 	dependencies = { "folke/snacks.nvim" },
 	config = true,
+	opts = {
+		terminal_cmd = "~/.claude/local/claude"
+	},
 	keys = {
 		{ "<leader>c",  nil,                              desc = "AI/Claude Code" },
 		{ "<leader>cc", "<cmd>ClaudeCode<cr>",            desc = "Toggle Claude" },

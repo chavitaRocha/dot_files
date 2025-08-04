@@ -162,3 +162,4 @@ eval "$(atuin init zsh)"
 alias claude="~/.claude/local/claude"
 
 export EDITOR='nvim'
+export PATH="~/.local/bin:$PATH"
