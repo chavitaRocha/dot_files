@@ -1,6 +1,8 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-w>h", "<C-\\><C-n> <C-w>h", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-w>l", "<C-\\><C-n> <C-w>l", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<leader><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
@@ -60,7 +62,7 @@ end, { desc = "[T]oggle Inlay [H]ints" })
 
 vim.keymap.set("n", "<leader>y", function()
 	local last_yank = vim.fn.getreg('"') -- Get the last yank register
-	vim.fn.system("pbcopy", last_yank) -- Send to macOS clipboard
+	vim.fn.system("pbcopy", last_yank)  -- Send to macOS clipboard
 	print("Yanked text copied to clipboard!")
 end, { desc = "Send last yank to macOS clipboard" })
 
@@ -79,10 +81,10 @@ function extractExhaustiveDeps(diagnostics)
 	local deps = {}
 	for _, diag in ipairs(diagnostics) do
 		if
-			diag.source == "biome"
-			and diag.user_data
-			and diag.user_data.lsp
-			and diag.user_data.lsp.code == "lint/correctness/useExhaustiveDependencies"
+				diag.source == "biome"
+				and diag.user_data
+				and diag.user_data.lsp
+				and diag.user_data.lsp.code == "lint/correctness/useExhaustiveDependencies"
 		then
 			local msg = diag.user_data.lsp.message or ""
 			-- capture the last “word” in the message
@@ -101,7 +103,7 @@ function diags_under_cursor()
 	-- get current buffer and cursor position
 	local bufnr = vim.api.nvim_get_current_buf()
 	local cursor = vim.api.nvim_win_get_cursor(0) -- { line, col }
-	local lnum = cursor[1] - 1 -- 0‑indexed
+	local lnum = cursor[1] - 1                   -- 0‑indexed
 
 	-- fetch diagnostics on that line
 	local diags = vim.diagnostic.get(bufnr, { lnum = lnum })

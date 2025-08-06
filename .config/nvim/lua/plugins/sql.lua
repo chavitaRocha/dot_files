@@ -17,6 +17,12 @@ return {
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "sql",
 			callback = function()
+				vim.bo.omnifunc = "vim_dadbod_completion#omni"
+			end,
+		})
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "sql",
+			callback = function()
 				vim.keymap.set({ 'v', 'n' }, '<leader>rr', '<Plug>(DBUI_ExecuteQuery)', { buffer = true })
 			end,
 		})
