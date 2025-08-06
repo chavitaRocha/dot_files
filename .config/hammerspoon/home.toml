@@ -74,9 +74,9 @@ i = "input:https://google.com/search?q={input}" # capture input and insert it in
 # we have window management too!
 [w]
 label = "[window]"
-f = "cmd:/opt/homebrew/bin/aerospace layout floating"
-t = "cmd:/opt/homebrew/bin/aerospace layout tiling"
-c = "window:center-half"                  # use presets listed in the README
+f = ["cmd:/opt/homebrew/bin/aerospace layout floating", "floating"]
+t = ["cmd:/opt/homebrew/bin/aerospace layout tiling", "tiling"]
+c = ["raycast://extensions/crickford/rectangle/almost-maximize", "center"]
 s = ["window:.4,.3,.2,.4","small center"] # or use 4 percentages for x,y,width,height for custom placement - more details in README
 
 
