@@ -27,6 +27,7 @@ alias nzsh="n ~/.zshrc"
 alias nconfig="cd ~/.config/nvim/ && n"
 # alias vconfig="cd ~/.config/VitaVim/ && vi"
 
+alias g="git"
 alias ga="git add"
 alias gf="git fetch"
 alias gc="git commit"
@@ -142,7 +143,7 @@ export _ZO_EXCLUDE="*/bin"
 
 
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-ctrl-r)"
 
 # Add this to your ~/.zshrc
 # if [ -n "$TMUX" ]; then
@@ -158,8 +159,15 @@ eval "$(atuin init zsh)"
 #                                or creates a new one named after the
 #                                basename of the selected path.
 
-
 alias claude="~/.claude/local/claude"
 
 export EDITOR='nvim'
 export PATH="~/.local/bin:$PATH"
+
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
+
+source <(fzf --zsh)
+export FZF_CTRL_R_OPTS="--reverse"
+export FZF_TMUX_OPTS="-p"
