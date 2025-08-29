@@ -3,6 +3,8 @@ local nav = require 'wezterm-nav'
 local tab_bar = require 'wezterm-tab-bar'
 
 local config = wezterm.config_builder()
+local scheme = wezterm.get_builtin_color_schemes()['Catppuccin Latte']
+scheme.background = '#FFFFFF'
 
 local function scheme_for_appearance(appearance)
   if appearance:find "Dark" then
@@ -12,6 +14,9 @@ local function scheme_for_appearance(appearance)
   end
 end
 
+config.color_schemes = {
+  ["Catppuccin Latte"] = scheme,
+}
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- print the workspace name at the upper right
@@ -24,17 +29,16 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
 
 wezterm.on("gui-startup", function(cmd)
-  local dotfiles_path = wezterm.home_dir .. "/.dotfiles"
-  local tab, build_pane, window = mux.spawn_window({
-    workspace = "dotfiles",
+  local dotfiles_path = wezterm.home_dir .. "/code/smart/hci"
+  local tab, build_pane, window = wezterm.mux.spawn_window({
+    workspace = "hci",
     cwd = dotfiles_path,
     args = args,
   })
-  build_pane:send_text("nvim\n")
-  mux.set_active_workspace("dotfiles")
+  wezterm.mux.set_active_workspace("hci")
 end)
 
-config.window_background_opacity = 0.94
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
 config.inactive_pane_hsb = {
@@ -49,6 +53,7 @@ config.window_padding = {
 }
 
 config.font_size = 16
+config.line_height = 1.1
 -- config.font = wezterm.font 'JetBrains Mono'
 config.font = wezterm.font_with_fallback {
   {
