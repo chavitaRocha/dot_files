@@ -3,7 +3,16 @@ local nav = require 'wezterm-nav'
 
 local config = w.config_builder()
 
-config.color_scheme = 'Catppuccin Latte'
+local function scheme_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return "Catppuccin Mocha"
+  else
+    return "Catppuccin Latte"
+  end
+end
+
+config.color_scheme = scheme_for_appearance(w.gui.get_appearance())
+
 config.window_background_opacity = 0.7
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
@@ -40,6 +49,12 @@ config.colors = {
   split = 'transparent',
 }
 
+-- The filled in variant of the < symbol
+local SOLID_LEFT_ARROW = w.nerdfonts.pl_right_hard_divider
+
+-- The filled in variant of the > symbol
+local SOLID_RIGHT_ARROW = w.nerdfonts.pl_left_hard_divider
+
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
 -- or `wezterm cli set-tab-title`, but falls back to the
@@ -58,21 +73,37 @@ end
 w.on(
   'format-tab-title',
   function(tab, tabs, panes, config, hover, max_width)
-    local title = tab_title(tab)
+    local edge_background = 'transparent'
+    local background = '#1b1032'
+    local foreground = '#808080'
+
     if tab.is_active then
-      return {
-        { Background = { Color = 'blue' } },
-        { Text = ' ' .. title .. ' ' },
-      }
+      background = '#2b2042'
+      foreground = '#c0c0c0'
+    elseif hover then
+      background = '#3b3052'
+      foreground = '#909090'
     end
-    if tab.is_last_active then
-      -- Green color and append '*' to previously active tab.
-      return {
-        { Background = { Color = 'green' } },
-        { Text = ' ' .. title .. '*' },
-      }
-    end
-    return title
+
+    local edge_foreground = background
+
+    local title = tab_title(tab)
+
+    -- ensure that the titles fit in the available space,
+    -- and that we have room for the edges.
+    title = w.truncate_right(title, max_width - 2)
+
+    return {
+      { Background = { Color = edge_background } },
+      { Foreground = { Color = edge_foreground } },
+      { Text = SOLID_LEFT_ARROW },
+      { Background = { Color = background } },
+      { Foreground = { Color = foreground } },
+      { Text = title },
+      { Background = { Color = edge_background } },
+      { Foreground = { Color = edge_foreground } },
+      { Text = SOLID_RIGHT_ARROW },
+    }
   end
 )
 
