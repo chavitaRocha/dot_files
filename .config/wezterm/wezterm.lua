@@ -12,14 +12,15 @@ config.inactive_pane_hsb = {
   brightness = 0.9,
 }
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 2,
+  right = 2,
+  top = 2,
+  bottom = 2,
 }
 
 config.font_size = 16
-config.font = w.font('Maple Mono NF', { weight = "Regular" })
+config.font = w.font 'JetBrains Mono'
+-- config.font = w.font('Maple Mono NF', { weight = "Regular" })
 -- config.freetype_load_target = 'HorizontalLcd'
 
 config.use_fancy_tab_bar = false
@@ -29,6 +30,11 @@ config.cursor_blink_ease_in = 'Constant'
 config.cursor_blink_ease_out = 'Constant'
 
 config.anti_alias_custom_block_glyphs = true
+
+-- Pane border settings to fix alignment
+config.enable_tab_bar = true
+config.tab_bar_at_bottom = true
+config.pane_focus_follows_mouse = false
 
 
 config.keys = {
@@ -66,11 +72,11 @@ config.keys = {
     mods = 'CMD|SHIFT',
     action = w.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
-  -- Close current pane (CMD+SHIFT+x)
+  -- Close current pane (CMD+w)
   {
-    key = 'x',
-    mods = 'CMD|SHIFT',
-    action = w.action.CloseCurrentPane { confirm = true },
+    key = 'w',
+    mods = 'CMD',
+    action = w.action.CloseCurrentPane { confirm = false },
   },
 }
 
