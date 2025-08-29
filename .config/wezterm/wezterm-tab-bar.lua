@@ -2,21 +2,22 @@ local wezterm = require 'wezterm'
 
 local PANE_ICON = wezterm.nerdfonts.md_dock_window
 
-local function tab_title(tab_info)
-  local title = tab_info.tab_title
-  -- if the tab title is explicitly set, take that
-  if title and #title > 0 then
-    return title
-  end
-  return tab_info.active_pane.title
-end
-
 local function get_current_working_dir(tab)
   local current_dir = tab.active_pane and tab.active_pane.current_working_dir or { file_path = "" }
   local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
 
   return current_dir == HOME_DIR and "." or string.gsub(current_dir.file_path, "(.*[/\\])(.*)", "%2")
 end
+
+local function tab_title(tab_info)
+  local title = tab_info.tab_title
+  -- if the tab title is explicitly set, take that
+  if title and #title > 0 then
+    return title
+  end
+  return get_current_working_dir(tab_info)
+end
+
 
 wezterm.on('update-right-status', function(window, pane)
   -- window:set_left_status(" " .. wezterm.nerdfonts.cod_terminal .. window:active_workspace() .. " ")
@@ -27,11 +28,11 @@ wezterm.on('update-right-status', function(window, pane)
     { Text = string.upper(window:active_workspace()) },
     { Text = " " },
   })
-  window:set_right_status(wezterm.format {
-    { Text = ' ' },
-    { Text = string.upper(window:active_workspace()) },
-    { Text = ' ' },
-  })
+  -- window:set_right_status(wezterm.format {
+  --   { Text = ' ' },
+  --   { Text = string.upper(window:active_workspace()) },
+  --   { Text = ' ' },
+  -- })
 end)
 
 wezterm.on(
@@ -49,8 +50,8 @@ wezterm.on(
       foreground = '#909090'
     end
 
-    -- local title = tab_title(tab)
-    local title = get_current_working_dir(tab)
+    local title = tab_title(tab)
+    -- local title = get_current_working_dir(tab)
 
     -- ensure that the titles fit in the available space,
     -- and that we have room for the edges.

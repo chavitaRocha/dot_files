@@ -48,12 +48,12 @@ config.inactive_pane_hsb = {
 config.window_padding = {
   left = 0,
   right = 0,
-  top = 0,
+  top = 5,
   bottom = 0,
 }
 
 config.font_size = 16
-config.line_height = 1.1
+config.line_height = 1.2
 -- config.font = wezterm.font 'JetBrains Mono'
 config.font = wezterm.font_with_fallback {
   {
@@ -94,6 +94,19 @@ config.colors = {
 
 
 config.leader = { key = ' ', mods = 'CTRL', timeout_milliseconds = 5000 }
+config.key_tables = {
+  copy_mode = {
+    {
+      key = 'y',
+      mods = 'NONE',
+      action = wezterm.action.Multiple {
+        wezterm.action.CopyTo 'PrimarySelection',
+        wezterm.action.ClearSelection,
+        wezterm.action.CopyMode { 'ClearSelectionMode' },
+      },
+    },
+  },
+}
 config.keys = {
   -- move between split panes
   nav.split_nav('move', 'h'),
@@ -141,6 +154,11 @@ config.keys = {
     key = 'l',
     mods = 'LEADER|SHIFT',
     action = wezterm.action.SwitchWorkspaceRelative(-1),
+  },
+  {
+    key = 'h',
+    mods = 'LEADER|SHIFT',
+    action = wezterm.action.SwitchWorkspaceRelative(1),
   },
   {
     key = 'm',
