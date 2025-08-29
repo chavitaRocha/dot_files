@@ -1,10 +1,6 @@
 local wezterm = require 'wezterm'
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 local PANE_ICON = wezterm.nerdfonts.md_dock_window
-
--- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 local function tab_title(tab_info)
   local title = tab_info.tab_title
@@ -12,9 +8,14 @@ local function tab_title(tab_info)
   if title and #title > 0 then
     return title
   end
-  -- Otherwise, use the title from the active pane
-  -- in that tab
   return tab_info.active_pane.title
+end
+
+local function get_current_working_dir(tab)
+  local current_dir = tab.active_pane and tab.active_pane.current_working_dir or { file_path = "" }
+  local HOME_DIR = string.format("file://%s", os.getenv("HOME"))
+
+  return current_dir == HOME_DIR and "." or string.gsub(current_dir.file_path, "(.*[/\\])(.*)", "%2")
 end
 
 wezterm.on('update-right-status', function(window, pane)
@@ -27,6 +28,8 @@ wezterm.on('update-right-status', function(window, pane)
     { Text = " " },
   })
   window:set_right_status(wezterm.format {
+    { Text = ' ' },
+    { Text = string.upper(window:active_workspace()) },
     { Text = ' ' },
   })
 end)
@@ -46,9 +49,8 @@ wezterm.on(
       foreground = '#909090'
     end
 
-    local edge_foreground = background
-
-    local title = tab_title(tab)
+    -- local title = tab_title(tab)
+    local title = get_current_working_dir(tab)
 
     -- ensure that the titles fit in the available space,
     -- and that we have room for the edges.
@@ -63,9 +65,7 @@ wezterm.on(
       -- { Background = { Color = background } },
       -- { Foreground = { Color = foreground } },
       { Text = title },
-      { Background = { Color = edge_background } },
-      { Foreground = { Color = edge_foreground } },
-      { Text = SOLID_RIGHT_ARROW },
+      { Text = ' ' },
     }
   end
 )

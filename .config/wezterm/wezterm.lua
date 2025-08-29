@@ -22,13 +22,19 @@ end)
 local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/smart_workspace_switcher.wezterm")
 -- set path to zoxide
 workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
--- keymaps
--- table.insert(keys, { key = "s", mods = "CTRL|SHIFT", action = workspace_switcher.switch_workspace() })
--- table.insert(keys, { key = "t", mods = "CTRL|SHIFT", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) })
--- table.insert(keys, { key = "[", mods = "CTRL|SHIFT", action = act.SwitchWorkspaceRelative(1) })
--- table.insert(keys, { key = "]", mods = "CTRL|SHIFT", action = act.SwitchWorkspaceRelative(-1) })
 
-config.window_background_opacity = 0.93
+wezterm.on("gui-startup", function(cmd)
+  local dotfiles_path = wezterm.home_dir .. "/.dotfiles"
+  local tab, build_pane, window = mux.spawn_window({
+    workspace = "dotfiles",
+    cwd = dotfiles_path,
+    args = args,
+  })
+  build_pane:send_text("nvim\n")
+  mux.set_active_workspace("dotfiles")
+end)
+
+config.window_background_opacity = 0.94
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
 config.inactive_pane_hsb = {
@@ -120,11 +126,28 @@ config.keys = {
     action = wezterm.action.PromptInputLine {
       description = 'Enter new name for tab',
       action = wezterm.action_callback(function(window, pane, line)
-        -- line will be `nil` if they hit escape without entering anything
-        -- An empty string if they just hit enter
-        -- Or the actual line of text they wrote
         if line then
           window:active_tab():set_title(line)
+        end
+      end),
+    },
+  },
+  {
+    key = 'l',
+    mods = 'LEADER|SHIFT',
+    action = wezterm.action.SwitchWorkspaceRelative(-1),
+  },
+  {
+    key = 'm',
+    mods = 'LEADER',
+    action = wezterm.action.PromptInputLine {
+      description = 'Enter new name for workspace',
+      action = wezterm.action_callback(function(window, pane, line)
+        if line then
+          wezterm.mux.rename_workspace(
+            wezterm.mux.get_active_workspace(),
+            line
+          )
         end
       end),
     },
