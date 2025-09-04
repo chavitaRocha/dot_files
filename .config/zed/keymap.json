@@ -24,10 +24,6 @@
       "space x": "diagnostics::Deploy",
       "space r r": "task::Rerun",
       "space t c": "theme_selector::Toggle",
-      "ctrl-w": [
-        "workspace::SendKeystrokes",
-        "shift-z shift-q"
-      ],
       "space g d": "editor::OpenExcerpts",
       "space k": "editor::Hover"
     }
@@ -91,12 +87,12 @@
       "space f": "editor::Format",
       "space r n": "editor::Rename",
       "space d m": "workspace::ToggleCenteredLayout",
-      "space v": "editor::GoToDefinitionSplit",
+      "space g d": "editor::GoToDefinitionSplit",
       "space e e": "project_panel::ToggleFocus",
       "space e h": "workspace::CloseAllDocks",
       "space t": "terminal_panel::ToggleFocus",
       "space s c": "command_palette::Toggle",
-      "space s a": "command_palette::Toggle",
+      "space f a": "command_palette::Toggle",
       "m l": "tab_switcher::Toggle",
       "g r": "editor::FindAllReferences",
       "g c c": "editor::ToggleComments"
@@ -147,6 +143,24 @@
     "context": "Terminal",
     "bindings": {
       "cmd-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal && !menu)",
+    "bindings": {
+      "space w r": null
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal && !menu)",
+    "bindings": {
+      "space w s": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "space f a": "editor::ToggleCodeActions"
     }
   }
 ]

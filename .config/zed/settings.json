@@ -10,8 +10,10 @@
 		"default_model": {
 			"provider": "zed.dev",
 			"model": "claude-3-7-sonnet-latest"
-		},
-		"version": "2"
+		}
+	},
+	"tab_bar": {
+		"show": false
 	},
 	"edit_predictions": {
 		"disabled_globs": [
@@ -30,7 +32,7 @@
 	"restore_on_startup": "last_workspace",
 	"vim_mode": true,
 	"auto_update": false,
-	"theme": "Catppuccin Latte",
+	"theme": "Catppuccin Frappé",
 	// "theme": "Atelier Heath Light",
 	// "theme": "Atelier Forest Light",
 	"base_keymap": "VSCode",
