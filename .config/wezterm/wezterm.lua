@@ -38,6 +38,7 @@ wezterm.on("gui-startup", function(cmd)
   wezterm.mux.set_active_workspace("hci")
 end)
 
+config.max_fps = 120
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
@@ -55,6 +56,12 @@ config.window_padding = {
 config.font_size = 16
 config.line_height = 1.2
 -- config.font = wezterm.font 'JetBrains Mono'
+-- {
+--   family = 'JetBrains Mono',
+--   weight = 'Medium',
+--   harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+-- },
+-- config.font = wezterm.font('BlexMono Nerd Font Mono')
 config.font = wezterm.font_with_fallback {
   {
     family = 'JetBrains Mono',
@@ -96,16 +103,118 @@ config.colors = {
 config.leader = { key = ' ', mods = 'CTRL', timeout_milliseconds = 5000 }
 config.key_tables = {
   copy_mode = {
+    -- Movement keys
+    {
+      key = 'h',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveLeft',
+    },
+    {
+      key = 'j',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveDown',
+    },
+    {
+      key = 'k',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveUp',
+    },
+    {
+      key = 'l',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveRight',
+    },
+    -- Word navigation
+    {
+      key = 'w',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveForwardWord',
+    },
+    {
+      key = 'b',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveBackwardWord',
+    },
+    {
+      key = 'e',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveForwardWordEnd',
+    },
+    -- Line operations
+    {
+      key = '0',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveToStartOfLine',
+    },
+    {
+      key = '$',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveToEndOfLineContent',
+    },
+    {
+      key = '^',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveToStartOfLineContent',
+    },
+    {
+      key = 'g',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveToScrollbackTop',
+    },
+    {
+      key = 'G',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'MoveToScrollbackBottom',
+    },
+    -- Selection modes
+    {
+      key = 'v',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode { SetSelectionMode = 'Cell' },
+    },
+    {
+      key = 'V',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode { SetSelectionMode = 'Line' },
+    },
+    -- Copy operations
     {
       key = 'y',
       mods = 'NONE',
       action = wezterm.action.Multiple {
-        wezterm.action.CopyTo 'PrimarySelection',
+        wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
         wezterm.action.ClearSelection,
-        wezterm.action.CopyMode { 'ClearSelectionMode' },
+        wezterm.action.CopyMode 'Close',
       },
     },
-  },
+    {
+      key = 'Y',
+      mods = 'NONE',
+      action = wezterm.action.Multiple {
+        wezterm.action.CopyMode { SetSelectionMode = 'Line' },
+        wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
+        wezterm.action.ClearSelection,
+        wezterm.action.CopyMode 'Close',
+      },
+    },
+    -- Search
+    {
+      key = '/',
+      mods = 'NONE',
+      action = wezterm.action.Search { CaseInSensitiveString = '' },
+    },
+    -- Exit copy mode
+    {
+      key = 'Escape',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'Close',
+    },
+    {
+      key = 'q',
+      mods = 'NONE',
+      action = wezterm.action.CopyMode 'Close',
+    },
+  }
 }
 config.keys = {
   -- move between split panes
@@ -127,6 +236,11 @@ config.keys = {
     key = 'l',
     mods = 'LEADER',
     action = wezterm.action.ActivateTabRelative(1),
+  },
+  {
+    key = 'v',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateCopyMode,
   },
   {
     key = 'z',
