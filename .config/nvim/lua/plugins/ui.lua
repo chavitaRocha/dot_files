@@ -34,6 +34,7 @@ return {
 	},
 	{
 		"alexghergh/nvim-tmux-navigation",
+		enabled = false,
 		opts = {
 			disable_when_zoomed = true, -- defaults to false
 			keybindings = {
@@ -240,6 +241,10 @@ return {
 					{ pattern = "organize imports",          key = "o", order = 7 },
 					{ pattern = "add inline type",           key = "t", order = 8 },
 				},
+				cs = {
+					{ pattern = "using Microservices", key = "u", order = 1 },
+					{ pattern = "using",               key = "u", order = 2 },
+				}
 			},
 		},
 	},
@@ -251,6 +256,29 @@ return {
 					winblend = 0,
 				},
 			},
+		},
+	},
+	{
+		"mrjones2014/smart-splits.nvim",
+		lazy = false,
+		keys = {
+			-- Movement between splits (vim and tmux panes)
+			{ '<C-h>',             function() require('smart-splits').move_cursor_left() end,  desc = 'Move to left split', mode = { "n", "v" } },
+			{ '<C-j>',             function() require('smart-splits').move_cursor_down() end,  desc = 'Move to below split', mode = { "n", "v" } },
+			{ '<C-k>',             function() require('smart-splits').move_cursor_up() end,    desc = 'Move to above split', mode = { "n", "v" } },
+			{ '<C-l>',             function() require('smart-splits').move_cursor_right() end, desc = 'Move to right split', mode = { "n", "v" } },
+
+			-- Resize splits
+			{ '<A-h>',             function() require('smart-splits').resize_left() end,       desc = 'Resize split left' },
+			{ '<A-j>',             function() require('smart-splits').resize_down() end,       desc = 'Resize split down' },
+			{ '<A-k>',             function() require('smart-splits').resize_up() end,         desc = 'Resize split up' },
+			{ '<A-l>',             function() require('smart-splits').resize_right() end,      desc = 'Resize split right' },
+
+			-- Swap splits
+			{ '<leader><leader>h', function() require('smart-splits').swap_buf_left() end,     desc = 'Swap buffer left' },
+			{ '<leader><leader>j', function() require('smart-splits').swap_buf_down() end,     desc = 'Swap buffer down' },
+			{ '<leader><leader>k', function() require('smart-splits').swap_buf_up() end,       desc = 'Swap buffer up' },
+			{ '<leader><leader>l', function() require('smart-splits').swap_buf_right() end,    desc = 'Swap buffer right' },
 		},
 	},
 }

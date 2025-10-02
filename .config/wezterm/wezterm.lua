@@ -28,6 +28,33 @@ local workspace_switcher = wezterm.plugin.require("https://github.com/MLFlexer/s
 -- set path to zoxide
 workspace_switcher.zoxide_path = "/opt/homebrew/bin/zoxide"
 
+-- Workspace switching functions for tmux-like toggling
+local function switch_workspace(window, pane, workspace)
+  local current_workspace = window:active_workspace()
+  if current_workspace == workspace then
+    return
+  end
+
+  -- Store current workspace before switching
+  wezterm.GLOBAL.previous_workspace = current_workspace
+
+  window:perform_action(
+    wezterm.action.SwitchToWorkspace({ name = workspace }),
+    pane
+  )
+end
+
+local function switch_to_previous_workspace(window, pane)
+  local current_workspace = window:active_workspace()
+  local workspace = wezterm.GLOBAL.previous_workspace
+
+  if current_workspace == workspace or workspace == nil then
+    return
+  end
+
+  switch_workspace(window, pane, workspace)
+end
+
 wezterm.on("gui-startup", function(cmd)
   local dotfiles_path = wezterm.home_dir .. "/code/smart/hci"
   local tab, build_pane, window = wezterm.mux.spawn_window({
@@ -42,9 +69,10 @@ config.max_fps = 120
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20
 config.window_decorations = 'RESIZE'
+
 config.inactive_pane_hsb = {
-  saturation = 0.9,
-  brightness = 0.9,
+  saturation = 0.6,
+  brightness = 0.8,
 }
 config.window_padding = {
   left = 0,
@@ -102,6 +130,40 @@ config.colors = {
 
 config.leader = { key = ' ', mods = 'CTRL', timeout_milliseconds = 5000 }
 config.key_tables = {
+  resize_mode = {
+    -- Resize panes with arrow keys (no modifiers needed in this mode)
+    {
+      key = 'LeftArrow',
+      mods = 'NONE',
+      action = wezterm.action.AdjustPaneSize { 'Left', 3 },
+    },
+    {
+      key = 'RightArrow',
+      mods = 'NONE',
+      action = wezterm.action.AdjustPaneSize { 'Right', 3 },
+    },
+    {
+      key = 'DownArrow',
+      mods = 'NONE',
+      action = wezterm.action.AdjustPaneSize { 'Up', 3 },
+    },
+    {
+      key = 'UpArrow',
+      mods = 'NONE',
+      action = wezterm.action.AdjustPaneSize { 'Down', 3 },
+    },
+    -- Exit resize mode
+    {
+      key = 'Escape',
+      mods = 'NONE',
+      action = 'PopKeyTable',
+    },
+    {
+      key = 'q',
+      mods = 'NONE',
+      action = 'PopKeyTable',
+    },
+  },
   copy_mode = {
     -- Movement keys
     {
@@ -222,11 +284,16 @@ config.keys = {
   nav.split_nav('move', 'j'),
   nav.split_nav('move', 'k'),
   nav.split_nav('move', 'l'),
-  -- resize panes
-  nav.split_nav('resize', 'h'),
-  nav.split_nav('resize', 'j'),
-  nav.split_nav('resize', 'k'),
-  nav.split_nav('resize', 'l'),
+  -- Enter resize mode with leader+r
+  {
+    key = 'r',
+    mods = 'LEADER',
+    action = wezterm.action.ActivateKeyTable {
+      name = 'resize_mode',
+      one_shot = false,
+      timeout_milliseconds = 3000,
+    },
+  },
   {
     key = 'h',
     mods = 'LEADER',
@@ -249,7 +316,7 @@ config.keys = {
   },
   {
     key = 't',
-    mods = 'CTRL',
+    mods = 'LEADER',
     action = workspace_switcher.switch_workspace()
   },
   {
@@ -264,11 +331,11 @@ config.keys = {
       end),
     },
   },
-  {
-    key = 'l',
-    mods = 'LEADER|SHIFT',
-    action = wezterm.action.SwitchWorkspaceRelative(-1),
-  },
+  -- {
+  --   key = 'l',
+  --   mods = 'LEADER|SHIFT',
+  --   action = wezterm.action.SwitchWorkspaceRelative(-1),
+  -- },
   {
     key = 'h',
     mods = 'LEADER|SHIFT',
@@ -288,6 +355,12 @@ config.keys = {
         end
       end),
     },
+  },
+  -- Toggle to last workspace (tmux-like)
+  {
+    key = 'l',
+    mods = 'LEADER|SHIFT',
+    action = wezterm.action_callback(switch_to_previous_workspace),
   },
   -- Copy
   {
@@ -319,6 +392,7 @@ config.keys = {
     mods = 'CMD',
     action = wezterm.action.CloseCurrentPane { confirm = false },
   },
+  { key = "Enter", mods = "SHIFT", action = wezterm.action { SendString = "\x1b\r" } },
 }
 
 

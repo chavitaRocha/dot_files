@@ -1,124 +1,90 @@
 [
   {
+    "context": "Editor",
     "bindings": {
-      "cmd-t": "workspace::ToggleBottomDock",
-      // "ctrl-y": "menu::SecondaryConfirm"
+      "ctrl-l": null
     }
   },
   {
-    "context": "Editor && showing_completions",
-    "use_key_equivalents": true,
+    "context": "vim_mode == literal",
     "bindings": {
-      "ctrl-y": "editor::ConfirmCompletion",
-      "tab": "editor::ComposeCompletion"
+      "ctrl-l": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-left": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "bindings": {
+      "ctrl-h": null
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-k": "workspace::ActivatePaneUp"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft"
+    }
+  },
+  {
+    "context": "(VimControl || (!Editor && !Terminal))",
+    "bindings": {
+      "ctrl-l": "workspace::ActivatePaneRight"
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space a t": "assistant::ToggleFocus",
-      "space b d": "pane::CloseActiveItem",
-      "space q": "workspace::CloseWindow",
-      "space b t": "pane::TogglePinTab",
-      "m m": "pane::TogglePinTab",
-      "space x": "diagnostics::Deploy",
-      "space r r": "task::Rerun",
-      "space t c": "theme_selector::Toggle",
-      "space g d": "editor::OpenExcerpts",
-      "space k": "editor::Hover"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "S": [
-        "vim::PushAddSurrounds",
-        {}
-      ]
-    }
-  },
-  {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      "shift-h": "pane::ActivatePreviousItem"
-    }
-  },
-  {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      "shift-l": "pane::ActivateNextItem"
-    }
-  },
-  {
-    "context": "Dock || Editor",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
-    }
-  },
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "a": "project_panel::NewFile",
-      "r": "project_panel::Rename",
-      "d": "project_panel::Delete",
-      "t": "editor::ScrollCursorCenter",
-      "/": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "TabSwitcher",
-    "bindings": {
-      "ctrl-shift-tab": "menu::SelectPrevious",
-      "ctrl-backspace": "tab_switcher::CloseSelectedItem"
-    }
-  },
-  {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
-    "bindings": {
-      "shift-k": "editor::Hover",
-      ";": "command_palette::Toggle",
       "space s f": "file_finder::Toggle",
-      "space s g": "workspace::NewSearch",
-      "space l a": "editor::ToggleCodeActions",
-      "space c a": "editor::ToggleCodeActions",
-      "space f": "editor::Format",
-      "space r n": "editor::Rename",
-      "space d m": "workspace::ToggleCenteredLayout",
-      "space g d": "editor::GoToDefinitionSplit",
-      "space e e": "project_panel::ToggleFocus",
+      "-": "project_panel::ToggleFocus",
       "space e h": "workspace::CloseAllDocks",
-      "space t": "terminal_panel::ToggleFocus",
-      "space s c": "command_palette::Toggle",
-      "space f a": "command_palette::Toggle",
-      "m l": "tab_switcher::Toggle",
-      "g r": "editor::FindAllReferences",
-      "g c c": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "!Editor && TabSwitcher",
-    "bindings": {
-      "d": "tab_switcher::CloseSelectedItem",
-      "j": [
-        "workspace::SendKeystrokes",
-        "down"
+      "space s g": "workspace::NewSearch",
+      "space r n": "editor::Rename",
+      "space g d": "editor::GoToDefinitionSplit",
+      "space e g": "command_palette::Toggle",
+      "space t": "terminal_panel::Toggle",
+      "shift-k": "editor::Hover",
+      "m l": [
+        "tab_switcher::Toggle",
+        {
+          "select_last": false
+        }
       ],
-      "k": [
-        "workspace::SendKeystrokes",
-        "up"
-      ]
-    }
-  },
-  {
-    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
-    "bindings": {
-      "ctrl-s": [
-        "workspace::SendKeystrokes",
-        "cmd-s escape"
-      ]
+      "m m": "pane::TogglePinTab",
+      ";": "command_palette::Toggle"
     }
   },
   {
@@ -129,38 +95,70 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "(VimControl && !menu)",
     "bindings": {
-      "j j": "vim::NormalBefore",
-      "j k": "vim::NormalBefore",
-      "ctrl-s": [
-        "workspace::SendKeystrokes",
-        "cmd-s escape"
-      ]
+      "g h": null
     }
   },
   {
-    "context": "Terminal",
+    "context": "(VimControl && !menu)",
     "bindings": {
-      "cmd-t": "workspace::NewTerminal"
+      "g h": null
     }
   },
   {
-    "context": "(vim_mode == helix_normal && !menu)",
+    "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "space w r": null
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem"
     }
   },
   {
-    "context": "(vim_mode == helix_normal && !menu)",
+    "context": "Workspace",
     "bindings": {
-      "space w s": null
+      "cmd-t": null
+    }
+  },
+  {
+    "context": "Workspace || (Editor && vim_mode == normal)",
+    "bindings": {
+      "cmd-t": "workspace::NewCenterTerminal"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space c c": "agent::ToggleFocus"
     }
   },
   {
     "context": "Editor",
     "bindings": {
+      "ctrl-y": null
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space f": "editor::Format"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
       "space f a": "editor::ToggleCodeActions"
+    }
+  },
+  {
+    "context": "(Editor && showing_completions)",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  },
+  {
+    "context": "Editor  &&  vim_mode ==  normal",
+    "bindings": {
+      "space d m": "workspace::ToggleCenteredLayout"
     }
   }
 ]

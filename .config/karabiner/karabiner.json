@@ -16,7 +16,9 @@
                                             "com.apple.Terminal",
                                             "com.mitchellh.ghostty",
                                             "io.alacritty",
-                                            "com.jetbrains.rider"
+                                            "com.jetbrains.rider",
+                                            "com.github.wez.wezterm",
+                                            "dev.zed.Zed"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -60,14 +62,14 @@
                     "ignore": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": true,
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": true,
                         "product_id": 24926,
                         "vendor_id": 7504
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "treat_as_built_in_keyboard": true
                 }
             ],
             "name": "Default profile",

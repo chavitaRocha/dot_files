@@ -38,15 +38,15 @@ end)
 wezterm.on(
   'format-tab-title',
   function(tab, tabs, panes, config, hover, max_width)
-    local edge_background = 'transparent'
-    local background = '#1b1032'
-    local foreground = '#808080'
+    local edge_background = nil
+    local background = nil
+    local foreground = '#888'
 
     if tab.is_active then
-      background = '#2b2042'
+      background = nil
       foreground = '#8287FD'
     elseif hover then
-      background = '#3b3052'
+      background = nil
       foreground = '#909090'
     end
 
@@ -58,13 +58,10 @@ wezterm.on(
     title = wezterm.truncate_right(title, max_width - 2)
 
     return {
-      { Background = { Color = edge_background } },
       { Foreground = { Color = foreground } },
       { Text = ' ' },
       { Text = PANE_ICON },
       { Text = ' ' },
-      -- { Background = { Color = background } },
-      -- { Foreground = { Color = foreground } },
       { Text = title },
       { Text = ' ' },
     }

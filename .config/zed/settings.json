@@ -9,11 +9,11 @@
 	"agent": {
 		"default_model": {
 			"provider": "zed.dev",
-			"model": "claude-3-7-sonnet-latest"
+			"model": "claude-sonnet-4"
 		}
 	},
 	"tab_bar": {
-		"show": false
+		"show": true
 	},
 	"edit_predictions": {
 		"disabled_globs": [
@@ -24,22 +24,36 @@
 			"structures/sum_test.go"
 		]
 	},
+	"preview_tabs": {
+		"enable_preview_from_file_finder": true,
+		"enable_preview_from_code_navigation": true
+	},
 	"experimental.theme_overrides": {
 		// "background.appearance": "blurred",
-		// "background": "#00000030",
-		// "editor.background": "#00000030",
+		// "background": "#FFFFFFaa",
+		// 	"editor.background": "#FFFFFF30"
 	},
 	"restore_on_startup": "last_workspace",
 	"vim_mode": true,
+	"vim": {
+		"use_system_clipboard": "on_yank"
+	},
 	"auto_update": false,
-	"theme": "Catppuccin Frappé",
-	// "theme": "Atelier Heath Light",
-	// "theme": "Atelier Forest Light",
+	"theme": {
+		"mode": "system",
+		"dark": "Catppuccin Frappé",
+		"light": "Catppuccin Latte"
+	},
 	"base_keymap": "VSCode",
+	"agent_font_size": 18,
 	"ui_font_size": 17,
-	"buffer_font_size": 15.0,
+	"buffer_font_size": 16.0,
 	"relative_line_numbers": true,
 	"soft_wrap": "editor_width",
+	"active_pane_modifiers": {
+		"border_size": 0.1,
+		"inactive_opacity": 0.8
+	},
 	"tabs": {
 		"file_icons": true
 	},
@@ -51,7 +65,9 @@
 		"dock": "right"
 	},
 	"terminal": {
-		"dock": "right"
+		"dock": "right",
+		"copy_on_select": true,
+		"font_family": "JetBrainsMono Nerd Font"
 	},
 	"formatter": {
 		"language_server": {
@@ -65,15 +81,32 @@
 	"languages": {
 		"TypeScript": {
 			"linked_edits": true,
-			"language_servers": ["vtsls", "biome", "typos", "tailwindcss", "eslint"]
+			"language_servers": [
+				"vtsls",
+				"biome",
+				"typos",
+				"tailwindcss-language-server",
+				"eslint"
+			]
 		},
 		"TSX": {
 			"linked_edits": true,
-			"language_servers": ["vtsls", "biome", "typos", "tailwindcss", "eslint"]
+			"language_servers": [
+				"vtsls",
+				"biome",
+				"typos",
+				"tailwindcss-language-server",
+				"eslint"
+			]
 		},
 		"JavaScript": {
 			"linked_edits": true,
-			"language_servers": ["vtsls", "biome", "typos", "tailwindcss"]
+			"language_servers": [
+				"vtsls",
+				"biome",
+				"typos",
+				"tailwindcss-language-server"
+			]
 		}
 	},
 	"lsp": {

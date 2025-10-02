@@ -1,12 +1,14 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.cmdheight = 0
 vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldlevel = 99
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.colorcolumn = "120"
 
 vim.opt.number = true
 vim.opt.nu = true
@@ -65,12 +67,6 @@ vim.opt.background = "light"
 
 -- vim.opt.guicursor = "n-v-c:block-blinkwait700-blinkoff400-blinkon250"
 vim.o.guicursor = "n-v-c:block-blinkwait700-blinkoff400-blinkon250,i:ver25-blinkwait700-blinkoff400-blinkon250"
-
-vim.filetype.add({
-	filename = {
-		["config"] = "bash", -- Replace "json" if Ghostty uses a different syntax
-	},
-})
 
 -- snacks
 vim.g.snacks_animate = false

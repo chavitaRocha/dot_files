@@ -15,7 +15,8 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 start-at-login = true
 # testing
 enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = true
+
 accordion-padding = 30
 
 default-root-container-layout = 'tiles'
@@ -37,18 +38,20 @@ gaps.outer.right =      7
 'View' = ['^Built-in Retina Display$', 'DELL*']
 'Arc' = ['main', 'LG ULTRAGEAR', 'DELL*']
 'Dev' = ['main', 'LG ULTRAGEAR', 'DELL*']
+'IDE' = ['main', 'LG ULTRAGEAR', 'DELL*']
 
 [mode.main.binding]
-cmd-1 = 'workspace Arc'
-cmd-2 = 'workspace Dev'
-cmd-3 = 'workspace Meet'
+# cmd-1 = 'workspace Arc'
+# cmd-2 = 'workspace Dev'
+# cmd-3 = 'workspace Meet'
 cmd-4 = 'workspace prev'
 cmd-5 = 'workspace next'
 
 cmd-shift-1 = 'move-node-to-workspace Arc'
 cmd-shift-2 = 'move-node-to-workspace Dev'
-cmd-shift-3 = 'move-node-to-workspace Meet'
-cmd-shift-6 = 'move-node-to-workspace View'
+cmd-shift-3 = 'move-node-to-workspace IDE'
+cmd-shift-4 = 'move-node-to-workspace Meet'
+cmd-shift-5 = 'move-node-to-workspace View'
 # cmd-4 = 'workspace prev'
 # cmd-5 = 'workspace next'
 # ctrl-tab = 'workspace-back-and-forth'
@@ -82,7 +85,6 @@ esc = 'mode main'
 [[on-window-detected]]
 if.app-id = 'com.steren.home'
 run = 'layout floating'
-
 
 [[on-window-detected]]
 if.app-id = 'org.virtualbox.app.VirtualBox'
@@ -237,8 +239,11 @@ if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace Dev'
 
 [[on-window-detected]]
-if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace Dev'
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+  "move-node-to-workspace Dev"
+]
 
 [[on-window-detected]]
 if.app-id = 'com.neovide.neovide'
@@ -250,7 +255,7 @@ run = 'move-node-to-workspace Dev'
 
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
-run ='move-node-to-workspace Dev'
+run ='move-node-to-workspace IDE'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.com.zen.browser'
@@ -286,32 +291,32 @@ run = 'move-node-to-workspace View'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
-run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+run = ['layout tiling' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
 if.window-title-regex-substring = 'Welcome'
-run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+run = ['layout tiling' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
 if.window-title-regex-substring = '-'
-run = ['layout tiling' , 'move-node-to-workspace Dev' ]
+run = ['layout tiling' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
 if.window-title-regex-substring = 'Settings'
-run = ['layout floating' , 'move-node-to-workspace Dev' ]
+run = ['layout floating' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
 if.window-title-regex-substring = 'Rename'
-run = ['layout floating' , 'move-node-to-workspace Dev' ]
+run = ['layout floating' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.rider'
 if.window-title-regex-substring = 'Harpoon'
-run = ['layout floating' , 'move-node-to-workspace Dev' ]
+run = ['layout floating' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.ArcStorm'
@@ -346,6 +351,11 @@ if.app-name-regex-substring = 'Picture in Picture'
 if.window-title-regex-substring = 'Picture in Picture'
 run = ['layout floating' ]
 
+# if.app-name-regex-substring = '^Audio playing - Brave'
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+if.window-title-regex-substring = '- Brave$'
+run = ['layout floating' ]
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefoxdeveloperedition'

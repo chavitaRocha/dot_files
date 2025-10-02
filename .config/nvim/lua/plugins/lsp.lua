@@ -1,7 +1,18 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "williamboman/mason.nvim", opts = {} },
+		{
+			"williamboman/mason.nvim",
+			opts = {},
+			config = function()
+				require("mason").setup({
+					registries = {
+						"github:mason-org/mason-registry",
+						"github:Crashdummyy/mason-registry",
+					},
+				})
+			end
+		},
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"Hoffs/omnisharp-extended-lsp.nvim",
@@ -25,8 +36,6 @@ return {
 		local capabilities = require("blink.cmp").get_lsp_capabilities({
 			textDocument = { completion = { completionItem = { snippetSupport = false } } },
 		})
-
-
 
 		local servers = {
 			vtsls = {
@@ -71,6 +80,20 @@ return {
 			},
 			lua_ls = {},
 			csharp_ls = {},
+			-- roslyn = {
+			-- 	settings = {
+			-- 		["csharp|inlay_hints"] = {
+			-- 			csharp_enable_inlay_hints_for_implicit_object_creation = true,
+			-- 			csharp_enable_inlay_hints_for_implicit_variable_types = true,
+			-- 		},
+			-- 		["csharp|code_lens"] = {
+			-- 			dotnet_enable_references_code_lens = true,
+			-- 		},
+			-- 		["csharp|formatting"] = {
+			-- 			dotnet_organize_imports_on_format = true,
+			-- 		},
+			-- 	},
+			-- },
 			-- omnisharp = {
 			-- 	settings = {
 			-- 		FormattingOptions = {

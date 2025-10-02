@@ -25,17 +25,22 @@ local direction_keys = {
   j = 'Down',
   k = 'Up',
   l = 'Right',
+  LeftArrow = 'Left',
+  DownArrow = 'Down',
+  UpArrow = 'Up',
+  RightArrow = 'Right',
 }
 
-local function split_nav(resize_or_move, key)
+local function split_nav(resize_or_move, key, custom_mods)
+  local mods = custom_mods or (resize_or_move == 'resize' and 'META' or 'CTRL')
   return {
     key = key,
-    mods = resize_or_move == 'resize' and 'META' or 'CTRL',
+    mods = mods,
     action = w.action_callback(function(win, pane)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
         win:perform_action({
-          SendKey = { key = key, mods = resize_or_move == 'resize' and 'META' or 'CTRL' },
+          SendKey = { key = key, mods = mods },
         }, pane)
       else
         if resize_or_move == 'resize' then

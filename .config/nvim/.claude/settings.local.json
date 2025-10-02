@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__context7__resolve-library-id",
+      "Read(/Users/srocha/dot_files/.config/ghostty/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

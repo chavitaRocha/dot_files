@@ -11,3 +11,4 @@
 .config/atuin/atuin-receipt.json
 .config/gh
 .config/karabiner/automatic_backups
+.config/wezterm/.claude

@@ -19,11 +19,11 @@ show_ui = true            # optional, default true, show the ui with your key ma
 
 # set a key to open an app
 b = "Brave Browser"
-e = "Microsoft Edge"
+e = "Zed"
 f = "Finder"
 c = ["raycast://extensions/raycast/clipboard-history/clipboard-history", "Clipboard"]
 k = ["raycast://extensions/rolandleth/kill-process/index", "Kill-process"]
-g = "Ghostty"
+g = "WezTerm"
 t = [ "Microsoft Teams", "Teams" ]
 l = ["raycast://extensions/raycast/system/lock-screen", "Lock Screen"]
 m = "Spotify"

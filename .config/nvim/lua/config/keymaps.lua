@@ -4,16 +4,36 @@ vim.keymap.set("t", "<C-w>h", "<C-\\><C-n> <C-w>h", { desc = "Exit terminal mode
 vim.keymap.set("t", "<C-w>l", "<C-\\><C-n> <C-w>l", { desc = "Exit terminal mode" })
 vim.keymap.set("t", "<leader><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- this is the way for colemak
+-- vim.api.nvim_set_keymap("n", "h", "<nop>", {})
+-- vim.api.nvim_set_keymap("n", "j", "<nop>", {})
+-- vim.api.nvim_set_keymap("n", "k", "<nop>", {})
+-- vim.api.nvim_set_keymap("n", "l", "<nop>", {})
 
+
+-- vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-h>", { desc = "Navigate left (tmux)" })
+-- vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-j>", { desc = "Navigate down (tmux)" })
+-- vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-k>", { desc = "Navigate up (tmux)" })
+-- vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-l>", { desc = "Navigate right (tmux)" })
+
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Navigate left", silent = true })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Navigate down", silent = true })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Navigate up", silent = true })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Navigate right", silent = true })
+--
+-- vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>', { silent = true })
+-- vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>', { silent = true })
+-- vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>', { silent = true })
+-- vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>', { silent = true })
+
+-- this is the way for colemak
 vim.keymap.set("n", "j", "gj", {})
 vim.keymap.set("n", "k", "gk", {})
+vim.keymap.set("n", "<down>", "gj", {})
+vim.keymap.set("n", "<up>", "gk", {})
 
 -- vim.keymap.set("i", "jj", "<Esc>", {})
-vim.keymap.set("i", "jk", "<cmd>echo 'Use ESC or C-c instead'<CR>", {})
+-- vim.keymap.set("i", "jk", "<cmd>echo 'Use ESC or C-c instead'<CR>", {})
 
 vim.keymap.set("i", "<C-c>", "<Esc>", {})
 vim.keymap.set("n", "<C-c>", "<Esc>", {})
@@ -116,3 +136,7 @@ end
 -- Example: print them out
 -- Map it to <leader>yr (yank deps → register)
 vim.keymap.set("n", "<leader>fu", diags_under_cursor, { desc = "Yank React hook dependencies into register" })
+
+-- Disable 'm' key for Colemak DH learning
+vim.keymap.set("n", "m", '<cmd>echo "Use Colemak DH - m is disabled for learning!"<CR>',
+	{ desc = "Disabled for Colemak DH learning", silent = true })

@@ -1,6 +1,7 @@
 local filtered_messages = {
 	"omnisharp: -32603: Internal Error - System.ArgumentOutOfRangeException",
 	"No information available",
+	'[mason-lspconfig.nvim] Server "roslyn" is not a valid entry in ensure_installed.'
 }
 
 return {
@@ -99,28 +100,28 @@ return {
 			end,
 			desc = "Find Config File",
 		},
-		{
-			"<leader>sf",
-			function()
-				Snacks.picker.smart({
-					hidden = true,
-					multi = { "files" },
-					layout = "ivy",
-					matcher = {
-						frecency = true,
-					},
-					exclude = {
-						"node_modules",
-						"package-lock.json",
-						"yarn.lock",
-						"pnpm-lock.yaml",
-						"bun.lockb",
-						"Podfile.lock",
-					},
-				})
-			end,
-			desc = "Find Files",
-		},
+		-- {
+		-- 	"<leader>ff",
+		-- 	function()
+		-- 		Snacks.picker.smart({
+		-- 			hidden = true,
+		-- 			multi = { "files" },
+		-- 			layout = "ivy",
+		-- 			matcher = {
+		-- 				frecency = true,
+		-- 			},
+		-- 			exclude = {
+		-- 				"node_modules",
+		-- 				"package-lock.json",
+		-- 				"yarn.lock",
+		-- 				"pnpm-lock.yaml",
+		-- 				"bun.lockb",
+		-- 				"Podfile.lock",
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- 	desc = "Find Files",
+		-- },
 		{
 			"<leader>fg",
 			function()

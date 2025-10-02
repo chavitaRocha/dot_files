@@ -109,9 +109,12 @@ return {
 				callback = function()
 					vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 					vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+					-- vim.api.nvim_set_hl(0, "Visual", { bg = "#CAD5E2" })
 					if vim.api.nvim_get_option_value("background", {}) == "dark" then
+						vim.api.nvim_set_hl(0, "Visual", { bg = "#505261" })
 						-- vim.api.nvim_set_hl(0, "Visual", { bg = "#3E4451" }) -- Replace #3E4451 with your desired color
 					else
+						vim.api.nvim_set_hl(0, "Visual", { bg = "#CAD5E2" })
 						-- vim.api.nvim_set_hl(0, "Visual", { bg = cursor_line_kanagawa_paper }) -- Replace #3E4451 with your desired color
 						-- vim.api.nvim_set_hl(
 						-- 	0,

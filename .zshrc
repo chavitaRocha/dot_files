@@ -8,7 +8,7 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/zen.toml)"
 
 # alias c="clear && tmux clear-history 2> /dev/null"
 alias c="clear"
-alias clear="clear && tmux clear-history 2> /dev/null"
+# alias clear="clear && tmux clear-history 2> /dev/null"
 alias pb="pbcopy"
 
 alias n="nvim"
@@ -99,9 +99,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zig
-export PATH="$HOME/zig/0.13.0/files:$PATH"
-alias zig="$HOME/zig/0.13.0/files/zig"
+export PATH="$PATH:/usr/local/zig/"
 
+# rust
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/bin/cargo:$PATH"
 # export PATH="$HOME/.cargo:$PATH"

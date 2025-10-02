@@ -4,6 +4,7 @@ return {
 		event = "VeryLazy",
 		lazy = false,
 		version = false,
+		enabled = false,
 		dependencies = {
 			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
