@@ -63,7 +63,7 @@ vim.keymap.set("i", "<C-s>", "<ESC><cmd>:w<CR>", {})
 
 -- close
 vim.keymap.set("n", "<leader>x", "<cmd>:x<CR>", { desc = "Close Neovim" })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>", { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>q", "<cmd>:wqa<CR>", { desc = "Close buffer" })
 -- TEST: testing the next command to close
 vim.keymap.set("n", "<leader>dd", "<cmd>:q<CR>", { desc = "Close buffer" })
 

@@ -162,7 +162,7 @@ eval "$(atuin init zsh --disable-ctrl-r)"
 #                                or creates a new one named after the
 #                                basename of the selected path.
 
-alias claude="~/.claude/local/claude"
+# alias claude="~/.claude/local/claude"
 
 export EDITOR='nvim'
 export PATH="~/.local/bin:$PATH"
@@ -174,3 +174,6 @@ fi
 source <(fzf --zsh)
 export FZF_CTRL_R_OPTS="--reverse"
 export FZF_TMUX_OPTS="-p"
+
+export NODE_EXTRA_CA_CERTS="$HOME/Documents/hci/Cato_Networks_Root_CA_2026.pem"
+export PATH="$HOME/.local/bin:$PATH"

@@ -36,9 +36,9 @@ gaps.outer.right =      7
 [workspace-to-monitor-force-assignment]
 'Meet' = ['^Built-in Retina Display$', 'DELL*']
 'View' = ['^Built-in Retina Display$', 'DELL*']
-'Arc' = ['main', 'LG ULTRAGEAR', 'DELL*']
-'Dev' = ['main', 'LG ULTRAGEAR', 'DELL*']
-'IDE' = ['main', 'LG ULTRAGEAR', 'DELL*']
+'Arc' = ['main', 'LG SMARTGAME+', 'DELL*']
+'Dev' = ['main', 'LG SMARTGAME+', 'DELL*']
+'IDE' = ['main', 'LG SMARTGAME+', 'DELL*']
 
 [mode.main.binding]
 # cmd-1 = 'workspace Arc'
@@ -241,7 +241,7 @@ run = 'move-node-to-workspace Dev'
 [[on-window-detected]]
 if.app-id="com.mitchellh.ghostty"
 run= [
-  "layout floating",
+  "layout tiling",
   "move-node-to-workspace Dev"
 ]
 
@@ -319,6 +319,10 @@ if.window-title-regex-substring = 'Harpoon'
 run = ['layout floating' , 'move-node-to-workspace IDE' ]
 
 [[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = ['layout tiling' , 'move-node-to-workspace IDE' ]
+
+[[on-window-detected]]
 if.app-id = 'com.jetbrains.ArcStorm'
 if.window-title-regex-substring = '-'
 run = ['layout tiling' , 'move-node-to-workspace Dev' ]
@@ -338,6 +342,10 @@ run = ['layout floating' ]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.keychainaccess'
+run = ['layout floating' ]
+
+[[on-window-detected]]
+if.app-id = 'org.kde.kdeconnect'
 run = ['layout floating' ]
 
 

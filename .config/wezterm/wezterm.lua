@@ -7,10 +7,19 @@ local scheme = wezterm.get_builtin_color_schemes()['Catppuccin Latte']
 scheme.background = '#FFFFFF'
 
 local function scheme_for_appearance(appearance)
+  -- Adventure,
   if appearance:find "Dark" then
-    return "Catppuccin Mocha"
+    return "Afterglow"
   else
     return "Catppuccin Latte"
+  end
+end
+
+local function opacity_for_appearance(appearance)
+  if appearance:find "Dark" then
+    return 0.99
+  else
+    return 0.94
   end
 end
 
@@ -66,8 +75,8 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 config.max_fps = 120
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
+config.window_background_opacity = opacity_for_appearance(wezterm.gui.get_appearance())
+config.macos_window_background_blur = 25
 config.window_decorations = 'RESIZE'
 
 config.inactive_pane_hsb = {
@@ -81,7 +90,7 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.font_size = 16
+config.font_size = 17
 config.line_height = 1.2
 -- config.font = wezterm.font 'JetBrains Mono'
 -- {
@@ -100,7 +109,7 @@ config.font = wezterm.font_with_fallback {
   'Noto Color Emoji',
 }
 -- config.font = w.font('Maple Mono NF', { weight = "Regular" })
--- config.freetype_load_target = 'HorizontalLcd'
+config.freetype_load_target = 'HorizontalLcd'
 
 config.use_fancy_tab_bar = false
 
@@ -227,6 +236,17 @@ config.key_tables = {
       key = 'G',
       mods = 'NONE',
       action = wezterm.action.CopyMode 'MoveToScrollbackBottom',
+    },
+    -- Half-page scrolling (vim behavior)
+    {
+      key = 'u',
+      mods = 'CTRL',
+      action = wezterm.action.CopyMode 'PageUp',
+    },
+    {
+      key = 'd',
+      mods = 'CTRL',
+      action = wezterm.action.CopyMode 'PageDown',
     },
     -- Selection modes
     {

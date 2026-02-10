@@ -57,7 +57,7 @@ return {
 					},
 				},
 			},
-			eslint = {},
+			-- eslint = {},
 			gopls = {
 				analyses = {
 					unusedparams = true,

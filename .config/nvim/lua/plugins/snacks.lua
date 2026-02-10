@@ -212,7 +212,7 @@ return {
 						"package-lock.json",
 						"yarn.lock",
 						"pnpm-lock.yaml",
-						"bun.lockb",
+						"bun.lock",
 						"Podfile.lock",
 					},
 				})

@@ -20,19 +20,16 @@ end
 
 
 wezterm.on('update-right-status', function(window, pane)
-  -- window:set_left_status(" " .. wezterm.nerdfonts.cod_terminal .. window:active_workspace() .. " ")
+  local workspace = window:active_workspace()
+  local workspace_name = workspace:match("([^/\\]+)$") or workspace
+
   window:set_left_status(wezterm.format {
     { Text = ' ' },
     { Text = wezterm.nerdfonts.cod_terminal_tmux },
     { Text = "  " },
-    { Text = string.upper(window:active_workspace()) },
+    { Text = string.upper(workspace_name) },
     { Text = " " },
   })
-  -- window:set_right_status(wezterm.format {
-  --   { Text = ' ' },
-  --   { Text = string.upper(window:active_workspace()) },
-  --   { Text = ' ' },
-  -- })
 end)
 
 wezterm.on(

@@ -69,7 +69,11 @@ sketchybar --add item clock right \
            --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+           --subscribe battery system_woke power_source_change \
+           --add item cpu right \
+           --set cpu update_freq=5 script="$PLUGIN_DIR/cpu.sh" \
+           --add item memory right \
+           --set memory update_freq=5 script="$PLUGIN_DIR/memory.sh"
 
 sketchybar --add event aerospace_workspace_change
 
